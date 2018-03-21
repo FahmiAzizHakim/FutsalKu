@@ -1,7 +1,7 @@
 <div class="row">
         <div class="panel panel-default">
             <div class="panel-body">
-            <a href="{$base_url}masterdata/lapangan/add"><button type="button" class="btn btn-success active">&nbsp;<span class="fa fa-plus"></span>Add&nbsp;</button></a>
+            <a href="{$base_url}masterdata/users/add"><button type="button" class="btn btn-success active">&nbsp;<span class="fa fa-plus"></span>Add&nbsp;</button></a>
             <br />
             <br />
                 <div class="table-responsive">

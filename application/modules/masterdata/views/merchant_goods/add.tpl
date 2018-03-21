@@ -1,7 +1,7 @@
 <div class="row">
     <div class="panel panel-default">
         <div class="panel-body">
-        <h3>Data Lapangan</h3>
+        <h3>Data Dagangan</h3>
             <form role="form">
                 <div class="form-group">
                     <label>Kode Barang</label>
