@@ -11,7 +11,7 @@ class Home extends MY_Controller {
 
 	public function index()
 	{
-    	$this->layout('test', '');
+    	$this->layout('home', '');
 	}
 	public function daftar()
 	{
