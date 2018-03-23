@@ -20,7 +20,7 @@
             <div class="col-md-12">
                 <label>JAM : </label> 
                 <div class="btn-group btn-group-justified">
-                <a href="#" class="btn btn-primary">06</a>
+                <a href="{$base_url}transaksi/add" class="btn btn-primary">06</a>
                 <a href="#" class="btn btn-primary">07</a>
                 <a href="#" class="btn btn-primary">08</a>
                 <a href="#" class="btn btn-primary">09</a>
