@@ -40,6 +40,11 @@
                     <option value="ACTNA">Non Aktif</option>
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <label>Harga Booking</label>
+                    <input type="number" class="form-control" placeholder="Harga Booking">
+                </div>
                 
             </form>
 
@@ -108,7 +113,7 @@
                 </div>
                 <div class="form-group">
 	                <label class="sr-only">Harga</label>
-	                <input class="form-control" type="text" placeholder="Harga" style="width:200px;"/>
+	                <input class="form-control" type="number" placeholder="Harga" style="width:200px;"/>
                 </div>                                    
                 <button type="submit" class="btn btn-info btn-condensed"><span class="fa fa-plus"></span></button>
             </div>
