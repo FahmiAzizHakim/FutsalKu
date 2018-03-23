@@ -43,6 +43,11 @@ class MY_Controller extends CI_Controller {
 	  $this->load_layout($template, $title);
 	}
 
+	function layout_empty($template, $title, $breadcrumbs=""){
+	 $this->templates->assign( 'template', $this->view_path . $template .'.tpl');
+      $this->templates->view('empty');
+	}
+
 	function layout_login($template){
 	  $this->templates->assign( 'template', $this->view_path . $template .'.tpl');
 	  $this->templates->view('layout_login');
