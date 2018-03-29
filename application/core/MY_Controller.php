@@ -12,10 +12,12 @@ class MY_Controller extends CI_Controller {
 	public $session_name;
 	public $session_role;
 	public $view_path = '';
+	public $API;
 
 	public function MY_Controller()
 	{
 		parent::__construct();
+		$this->API = 'http://localhost/redecent/serverapi.futsalku/';
 		$this->module = $this->router->fetch_module();
 		$this->controller = $this->router->fetch_class();
 		$path = APPPATH . 'modules/'.$this->module.'/views/';
@@ -26,6 +28,7 @@ class MY_Controller extends CI_Controller {
 		$this->session_user = $this->session->userdata('user_id');
 		$this->session_name = $this->session->userdata('user_name');
 		$this->session_role = $this->session->userdata('user_group');
+		$this->templates->assign( 'api_url', $this->API);
 		$this->templates->assign( 'session_user', $this->session_user);
 		$this->templates->assign( 'session_name', $this->session_name);
 		$this->templates->assign( 'session_role', $this->session_role);

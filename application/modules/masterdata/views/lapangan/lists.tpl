@@ -17,6 +17,16 @@
                         </tr>
                         </thead>
                         <tbody>
+                            {foreach from=$data_lapangan item=row}
+                                <tr>
+                                    <td>{$row.field_no}</td>
+                                    <td>{$row.field_name}</td>
+                                    <td>{$row.field_room}</td>
+                                    <td>{$row.field_type}</td>
+                                    <td>{$row.activestatus}</td>
+                                    <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
+                                </tr>
+                            {/foreach}
                             <tr>
                                 <td>1</td>
                                 <td>Sentetis 1</td>
