@@ -11,39 +11,38 @@
                     <label>Ruangan</label>
                     <select name="field_room" class="form-control select">
                     <option></option>
-                    <option value="FLRIND">Indoor</option>
-                    <option value="FLROUT">Outdoor</option>
+                    {foreach from=$field_room item=row}
+                        <option value="{$row.code_code}">{$row.code_name}</option>
+                    {/foreach}
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Jenis Lapangan</label>
                     <select name="field_type" class="form-control select">
                     <option></option>
-                    <option value="FLTVNL">Vinyl</option>
-                    <option value="FLTSTS">Rumput Sintetis</option>
-                    <option value="FLTSMN">Semen</option>
-                    <option value="FLTPQT">Parquette</option>
-                    <option value="FLTTRX">Taraflex</option>
+                    {foreach from=$field_type item=row}
+                        <option value="{$row.code_code}">{$row.code_name}</option>
+                    {/foreach}
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Disediakan Bola</label>
-                    <select name="field_type" class="form-control select">
+                    <select name="field_ball" class="form-control select">
                     <option value="OPTYS">Ya</option>
                     <option value="OPTNO">Tidak</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Aktif Status</label>
-                    <select name="active_status" class="form-control select">
-                    <option value="ACTOK">Aktif</option>
-                    <option value="ACTNA">Non Aktif</option>
+                    <select name="activestatus" class="form-control select">
+                    <option value="ATSAC">Aktif</option>
+                    <option value="ATSNA">Non Aktif</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Harga Booking</label>
-                    <input type="number" class="form-control" placeholder="Harga Booking">
+                    <input name="field_book_price" type="number" class="form-control" placeholder="Harga Booking">
                 </div>
                 
             </form>
@@ -61,14 +60,22 @@
                     <label class="sr-only">Hari</label>
                     <select name="price_timefrom"class="form-control select" placeholder="Dari Jam" style="width:200px;">
                     <option>Hari</option>
-                    <option value="FLDWKD">Senin - Jumat</option>
-                    <option value="FLDWED">Sabtu, Minggu & Hari Libur</option>
+                    {foreach from=$day_type item=row}
+                        <option value="{$row.code_code}">{$row.code_name}</option>
+                    {/foreach}
                     </select>
                 </div>
             	<div class="form-group">
-                    <label class="sr-only">Dari Jam</label>
+                    <label class="sr-only">Dari Pukul</label>
                     <select name="price_timefrom"class="form-control select" placeholder="Dari Jam" style="width:200px;">
-                    <option>Dari Jam</option>
+                    <option>Dari Pukul</option>
+                    <option value="1">01.00</option>
+                    <option value="2">02.00</option>
+                    <option value="3">03.00</option>
+                    <option value="4">04.00</option>
+                    <option value="5">05.00</option>
+                    <option value="6">06.00</option>
+                    <option value="7">07.00</option>
                     <option value="8">08.00</option>
                     <option value="9">09.00</option>
                     <option value="10">10.00</option>
@@ -89,9 +96,16 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="sr-only">Sampai Jam</label>
+                    <label class="sr-only">Sampai Pukul</label>
                     <select name="price_timefrom" class="form-control select" placeholder="Sampai Jam" style="width:200px;">
-                    <option>Sampai Jam</option>
+                    <option>Sampai Pukul</option>
+                    <option value="1">01.00</option>
+                    <option value="2">02.00</option>
+                    <option value="3">03.00</option>
+                    <option value="4">04.00</option>
+                    <option value="5">05.00</option>
+                    <option value="6">06.00</option>
+                    <option value="7">07.00</option>
                     <option value="8">08.00</option>
                     <option value="9">09.00</option>
                     <option value="10">10.00</option>
