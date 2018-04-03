@@ -5,11 +5,11 @@
             <form role="form">
                 <div class="form-group">
 	                <label>Nama Lapangan</label>
-	                <input name="field_name"type="text" class="form-control"/>
+	                <input id="field_name" name="field_name" type="text" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label>Ruangan</label>
-                    <select name="field_room" class="form-control select">
+                    <select id="field_room" name="field_room" class="form-control select">
                     <option></option>
                     {foreach from=$field_room item=row}
                         <option value="{$row.code_code}">{$row.code_name}</option>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label>Jenis Lapangan</label>
-                    <select name="field_type" class="form-control select">
+                    <select id="field_type" name="field_type" class="form-control select">
                     <option></option>
                     {foreach from=$field_type item=row}
                         <option value="{$row.code_code}">{$row.code_name}</option>
@@ -27,14 +27,14 @@
                 </div>
                 <div class="form-group">
                     <label>Disediakan Bola</label>
-                    <select name="field_ball" class="form-control select">
+                    <select id="field_ball" name="field_ball" class="form-control select">
                     <option value="OPTYS">Ya</option>
                     <option value="OPTNO">Tidak</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Aktif Status</label>
-                    <select name="activestatus" class="form-control select">
+                    <select id="activestatus" name="activestatus" class="form-control select">
                     <option value="ATSAC">Aktif</option>
                     <option value="ATSNA">Non Aktif</option>
                     </select>
@@ -42,7 +42,7 @@
 
                 <div class="form-group">
                     <label>Harga Booking</label>
-                    <input name="field_book_price" type="number" class="form-control" placeholder="Harga Booking">
+                    <input id="field_book_price" name="field_book_price" type="number" class="form-control" placeholder="Harga Booking">
                 </div>
                 
             </form>
@@ -172,9 +172,68 @@
                 </table>
             </div>
             <div>
-            <button type="button" class="btn btn-success active"><span class="fa fa-check"></span>Submit</button>
+            <button type="button" id="BtnSubmit" class="btn btn-success active"><span class="fa fa-check"></span>Submit</button>
             <button type="button" class="btn btn-danger active"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    {literal}
+    $("#BtnSubmit").click(function(){
+    {/literal}
+        var api_url = '{$api_url}';
+    {literal}
+        if($("#field_name").val() == ""){
+            alert("Nama Lapangan Harus Diisi");
+            $("#field_name").focus();
+            return false;
+        };
+        if($("#field_room").val() == ""){
+            alert("Ruangan Lapangan Harus Diisi");
+            $("#field_room").focus();
+            return false;
+        };
+        if($("#field_type").val() == ""){
+            alert("Tipe Lapangan Harus Diisi");
+            $("#field_type").focus();
+            return false;
+        };
+        if($("#field_ball").val() == ""){
+            alert("Bola Harus Diisi");
+            $("#field_ball").focus();
+            return false;
+        };
+        if($("#field_book_price").val() == ""){
+            alert("Harga Lapangan Harus Diisi");
+            $("#field_book_price").focus();
+            return false;
+        };
+
+        $.ajax({
+            type: "POST",
+            url: api_url + "Master_data/field_insert",
+            dataType: "json",
+            data: { field_name : $("#field_name").val(), 
+                    field_room : $("#field_room").val(),
+                    field_type : $("#field_type").val(),
+                    field_ball : $("#field_ball").val(),
+                    field_book_price : $("#field_book_price").val(),
+                    activestatus : $("#activestatus").val() },
+            success: function(data) {
+                if(data == null)
+                {
+                    callback_show_invoice();
+                }
+                else
+                {
+                    $('#invoice_amount').val(data.lph_amount);
+                    $('#invoice_value').focus();
+                }
+
+            }
+        });
+    });
+    {/literal}
+
+</script>

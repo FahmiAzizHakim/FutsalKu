@@ -16,6 +16,49 @@
         <!-- EOF CSS INCLUDE -->                   
     </head>
     <body>
+
+    <!-- START PRELOADS -->
+        <audio id="audio-alert" src="{$assets_url}audio/alert.mp3" preload="auto"></audio>
+        <audio id="audio-fail" src="{$assets_url}audio/fail.mp3" preload="auto"></audio>
+        <!-- END PRELOADS -->                  
+        
+    <!-- START SCRIPTS -->
+        <!-- START PLUGINS -->
+        <script type="text/javascript" src="{$assets_url}js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap.min.js"></script>        
+        <!-- END PLUGINS -->
+
+        <!-- START THIS PAGE PLUGINS-->        
+        <script type='text/javascript' src='{$assets_url}js/plugins/icheck/icheck.min.js'></script>        
+        <script type="text/javascript" src="{$assets_url}js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+        
+        <script type="text/javascript" src="{$assets_url}js/plugins/morris/raphael-min.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/morris/morris.min.js"></script>       
+        <script type='text/javascript' src='{$assets_url}new/bootstrap-datepicker.js'></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap-file-input.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap-select.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/tagsinput/jquery.tagsinput.min.js"></script>                
+        <script type="text/javascript" src="{$assets_url}js/plugins/owl/owl.carousel.min.js"></script>                 
+        
+        <script type="text/javascript" src="{$assets_url}js/plugins/moment.min.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- END THIS PAGE PLUGINS-->        
+
+        <!-- START TEMPLATE -->
+        <!-- <script type="text/javascript" src="{$assets_url}js/settings.js"></script> -->
+        
+        <script type="text/javascript" src="{$assets_url}js/plugins.js"></script>        
+        <script type="text/javascript" src="{$assets_url}js/actions.js"></script>
+        <script type="text/javascript" src="{$assets_url}js/plugins/datatables/jquery.dataTables.min.js"></script>
+        
+        <script type="text/javascript" src="{$assets_url}js/demo_dashboard.js"></script>
+        <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->      
+
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
             
@@ -250,47 +293,7 @@
         </div>
         <!-- END MESSAGE BOX-->
 
-        <!-- START PRELOADS -->
-        <audio id="audio-alert" src="{$assets_url}audio/alert.mp3" preload="auto"></audio>
-        <audio id="audio-fail" src="{$assets_url}audio/fail.mp3" preload="auto"></audio>
-        <!-- END PRELOADS -->                  
-        
-    <!-- START SCRIPTS -->
-        <!-- START PLUGINS -->
-        <script type="text/javascript" src="{$assets_url}js/plugins/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap.min.js"></script>        
-        <!-- END PLUGINS -->
-
-        <!-- START THIS PAGE PLUGINS-->        
-        <script type='text/javascript' src='{$assets_url}js/plugins/icheck/icheck.min.js'></script>        
-        <script type="text/javascript" src="{$assets_url}js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-        
-        <script type="text/javascript" src="{$assets_url}js/plugins/morris/raphael-min.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/morris/morris.min.js"></script>       
-        <script type='text/javascript' src='{$assets_url}new/bootstrap-datepicker.js'></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap-file-input.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/bootstrap/bootstrap-select.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/tagsinput/jquery.tagsinput.min.js"></script>                
-        <script type="text/javascript" src="{$assets_url}js/plugins/owl/owl.carousel.min.js"></script>                 
-        
-        <script type="text/javascript" src="{$assets_url}js/plugins/moment.min.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/daterangepicker/daterangepicker.js"></script>
-        <!-- END THIS PAGE PLUGINS-->        
-
-        <!-- START TEMPLATE -->
-        <!-- <script type="text/javascript" src="{$assets_url}js/settings.js"></script> -->
-        
-        <script type="text/javascript" src="{$assets_url}js/plugins.js"></script>        
-        <script type="text/javascript" src="{$assets_url}js/actions.js"></script>
-        <script type="text/javascript" src="{$assets_url}js/plugins/datatables/jquery.dataTables.min.js"></script>
-        
-        <script type="text/javascript" src="{$assets_url}js/demo_dashboard.js"></script>
-        <!-- END TEMPLATE -->
-    <!-- END SCRIPTS -->         
+   
     </body>
 </html>
 
