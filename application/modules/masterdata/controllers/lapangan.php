@@ -20,7 +20,6 @@ class Lapangan extends MY_Controller {
 	{
 		$param_fieldtype = array('code_category' => 'FLT');
 		$field_type = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
-		print_r($field_type);
 
 		$param_fieldroom = array('code_category' => 'FLR');
 		$field_room = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldroom)), true);
