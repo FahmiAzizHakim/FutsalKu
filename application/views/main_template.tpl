@@ -84,6 +84,14 @@
                         </ul>
                     </li>
                     <li class="xn-openable">
+                        <a href="#"><span class="fa fa-dollar"></span><span class="xn-text">Transaksi</span></a>
+                        <ul>
+                            <li><a href="{$base_url}transaksi/toko"><span class="fa fa-shopping-cart"></span> Toko</a></li>                            
+                            <li><a href="#"><span class="fa fa-book"></span> Booking Lapngan</a></li>
+                            <li><a href="#"><span class="fa fa-money"></span> Pembayaran Lapangan</a></li>
+                        </ul>   
+                    </li>
+                    <li class="xn-openable">
                         <a href="#"><span class="fa fa-dollar"></span><span class="xn-text">Billing</span></a>                        
                         <ul>
                             <li><a href="#"><span class="fa fa-heart"></span> Pengeluaran</a></li>                            
