@@ -17,30 +17,16 @@
                         </tr>
                         </thead>
                         <tbody>
+                         {foreach from=$data_barang item=row}
                             <tr>
-                                <td>AQUABSR</td>
-                                <td>Aqua Botol Besar</td>
-                                <td>Minuman</td>
-                                <td>5.000,00</td>
+                                <td>{$row.store_goods_code}</td>
+                                <td>{$row.store_goods_name}</td>
+                                <td>{$row.store_goods_type}</td>
+                                <td>Rp.{$row.store_goods_price}</td>
                                 <td>Aktif</td>
                                 <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
                             </tr>
-                            <tr>
-                                <td>PCRSDG</td>
-                                <td>Pocari Sweat Sedang</td>
-                                <td>Minuman</td>
-                                <td>6.000,00</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
-                            <tr>
-                                <td>MNMMZN</td>
-                                <td>Mizone</td>
-                                <td>Minuman</td>
-                                <td>6.000,00</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
+                        {/foreach}
                         </tbody>
                     </table>
                 </div>
