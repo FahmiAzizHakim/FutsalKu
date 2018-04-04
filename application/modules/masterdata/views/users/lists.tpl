@@ -20,6 +20,7 @@
                                 <tr>
                                     <td>{$row.user_code}</td>
                                     <td>{$row.user_name}</td>
+                                    <td>{$row.user_group}</td>
                                     <td>{$row.activestatus}</td>
                                     <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
                                 </tr>
