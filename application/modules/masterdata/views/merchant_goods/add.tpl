@@ -5,7 +5,7 @@
             <form role="form">
                 <div class="form-group">
                     <label>Kode Barang</label>
-                    <input name="field_name"type="text" class="form-control"/>
+                    <input name="field_code"type="text" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label>Nama Barang</label>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <label>Harga</label>
-                    <input name="field_name" type="number" class="form-control"/>
+                    <input name="field_price" type="number" class="form-control"/>
                     </select>
                 </div>
                 <div class="form-group">
