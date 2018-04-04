@@ -8,6 +8,10 @@
 	                <input id="field_name" name="field_name" type="text" class="form-control"/>
                 </div>
                 <div class="form-group">
+                    <label>No Lapangan</label>
+                    <input id="field_no" name="field_no" type="text" class="form-control" value="{$field_no}" readonly="readonly" />
+                </div>
+                <div class="form-group">
                     <label>Ruangan</label>
                     <select id="field_room" name="field_room" class="form-control select">
                     <option></option>
@@ -210,25 +214,37 @@
             return false;
         };
 
+        noty({text: 'Loading', layout: 'topCenter'});
+        $("#BtnSubmit").attr("disabled", true);
+
         $.ajax({
             type: "POST",
             url: api_url + "Master_data/field_insert",
             dataType: "json",
-            data: { field_name : $("#field_name").val(), 
+            data: { field_name : $("#field_name").val(),
+                    field_no : $("#field_no").val(),
                     field_room : $("#field_room").val(),
                     field_type : $("#field_type").val(),
                     field_ball : $("#field_ball").val(),
                     field_book_price : $("#field_book_price").val(),
-                    activestatus : $("#activestatus").val() },
+                    activestatus : $("#activestatus").val(),
+                    created_by : 'Fahmi',
+                    company_code : 'RDCNT' },
             success: function(data) {
-                if(data == null)
+                $("#BtnSubmit").removeAttr("disabled");
+                $("#noty_topCenter_layout_container").remove();
+                alert(data.status);
+
+                if(data.status == "success")
                 {
-                    callback_show_invoice();
+                    alert("Data Berhasil Diproses");
+                    {/literal}
+                    window.location.replace("{$base_url}masterdata/lapangan");
+                    {literal}
                 }
                 else
                 {
-                    $('#invoice_amount').val(data.lph_amount);
-                    $('#invoice_value').focus();
+                    alert("Data Gagal Diproses, Harap Hubungin Call Center");
                 }
 
             }
