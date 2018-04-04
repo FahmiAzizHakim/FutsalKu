@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-03 15:44:41
+/* Smarty version 3.1.30, created on 2018-04-04 11:17:26
   from "C:\xampp\htdocs\FutsalKu\application\views\main_template.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ac385490eb472_31145567',
+  'unifunc' => 'content_5ac49826101eb9_17147229',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5f430513480d8c796e3bf3d9e73063b03cb7945d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\FutsalKu\\application\\views\\main_template.tpl',
-      1 => 1522763079,
+      1 => 1522833438,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ac385490eb472_31145567 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ac49826101eb9_17147229 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +42,122 @@ new/bootstrap-datepicker.css"/>
         <!-- EOF CSS INCLUDE -->                   
     </head>
     <body>
+
+    <!-- START PRELOADS -->
+        <audio id="audio-alert" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+audio/alert.mp3" preload="auto"></audio>
+        <audio id="audio-fail" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+audio/fail.mp3" preload="auto"></audio>
+        <!-- END PRELOADS -->                  
+        
+    <!-- START SCRIPTS -->
+        <!-- START PLUGINS -->
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/jquery/jquery.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/jquery/jquery-ui.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/bootstrap/bootstrap.min.js"><?php echo '</script'; ?>
+>        
+        <!-- END PLUGINS -->
+
+        <!-- START THIS PAGE PLUGINS-->        
+        <?php echo '<script'; ?>
+ type='text/javascript' src='<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/icheck/icheck.min.js'><?php echo '</script'; ?>
+>        
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/scrolltotop/scrolltopcontrol.js"><?php echo '</script'; ?>
+>
+             
+        <?php echo '<script'; ?>
+ type='text/javascript' src='<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+new/bootstrap-datepicker.js'><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/bootstrap/bootstrap-timepicker.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/bootstrap/bootstrap-colorpicker.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/bootstrap/bootstrap-file-input.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/bootstrap/bootstrap-select.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/tagsinput/jquery.tagsinput.min.js"><?php echo '</script'; ?>
+>                
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/owl/owl.carousel.min.js"><?php echo '</script'; ?>
+>                 
+        
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/moment.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/daterangepicker/daterangepicker.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type='text/javascript' src='<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/noty/jquery.noty.js'><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type='text/javascript' src='<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/noty/layouts/topCenter.js'><?php echo '</script'; ?>
+>         
+            
+        <?php echo '<script'; ?>
+ type='text/javascript' src='<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/noty/themes/default.js'><?php echo '</script'; ?>
+>
+        <!-- END THIS PAGE PLUGINS-->        
+
+        <!-- START TEMPLATE -->
+        <!-- <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/settings.js"><?php echo '</script'; ?>
+> -->
+        
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins.js"><?php echo '</script'; ?>
+>        
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/actions.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/plugins/datatables/jquery.dataTables.min.js"><?php echo '</script'; ?>
+>
+        
+        <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
+js/demo_dashboard.js"><?php echo '</script'; ?>
+>
+        <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->      
+
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
             
@@ -95,6 +211,16 @@ masterdata/merchant_goods"><span class="fa fa-shopping-cart"></span>Barang Toko<
                         </ul>
                     </li>
                     <li class="xn-openable">
+                        <a href="#"><span class="fa fa-dollar"></span><span class="xn-text">Transaksi</span></a>
+                        <ul>
+                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+transaksi/toko"><span class="fa fa-shopping-cart"></span> Toko</a></li>                            
+                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+transaksi/list_booking"><span class="fa fa-book"></span> Booking Lapangan</a></li>
+                            <li><a href="#"><span class="fa fa-money"></span> Pembayaran Lapangan</a></li>
+                        </ul>   
+                    </li>
+                    <li class="xn-openable">
                         <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Laporan</span></a>
                         <ul>
                             <li><a href="layout-boxed.html">Boxed</a></li>
@@ -118,15 +244,7 @@ masterdata/merchant_goods"><span class="fa fa-shopping-cart"></span>Barang Toko<
                             <li><a href="blank.html">Blank Page</a></li>
                         </ul>
                     </li>
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-dollar"></span><span class="xn-text">Transaksi</span></a>
-                        <ul>
-                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
-transaksi/toko"><span class="fa fa-shopping-cart"></span> Toko</a></li>                            
-                            <li><a href="#"><span class="fa fa-book"></span> Booking Lapngan</a></li>
-                            <li><a href="#"><span class="fa fa-money"></span> Pembayaran Lapangan</a></li>
-                        </ul>   
-                    </li>
+                    
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-dollar"></span><span class="xn-text">Billing</span></a>                        
                         <ul>
@@ -300,115 +418,7 @@ assets/images/users/user6.jpg" class="pull-left" alt="Darth Vader"/>
         </div>
         <!-- END MESSAGE BOX-->
 
-        <!-- START PRELOADS -->
-        <audio id="audio-alert" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-audio/alert.mp3" preload="auto"></audio>
-        <audio id="audio-fail" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-audio/fail.mp3" preload="auto"></audio>
-        <!-- END PRELOADS -->                  
-        
-    <!-- START SCRIPTS -->
-        <!-- START PLUGINS -->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/jquery/jquery.min.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/jquery/jquery-ui.min.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/bootstrap/bootstrap.min.js"><?php echo '</script'; ?>
->        
-        <!-- END PLUGINS -->
-
-        <!-- START THIS PAGE PLUGINS-->        
-        <?php echo '<script'; ?>
- type='text/javascript' src='<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/icheck/icheck.min.js'><?php echo '</script'; ?>
->        
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/scrolltotop/scrolltopcontrol.js"><?php echo '</script'; ?>
->
-        
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/morris/raphael-min.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/morris/morris.min.js"><?php echo '</script'; ?>
->       
-        <?php echo '<script'; ?>
- type='text/javascript' src='<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-new/bootstrap-datepicker.js'><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/bootstrap/bootstrap-timepicker.min.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/bootstrap/bootstrap-colorpicker.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/bootstrap/bootstrap-file-input.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/bootstrap/bootstrap-select.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/tagsinput/jquery.tagsinput.min.js"><?php echo '</script'; ?>
->                
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/owl/owl.carousel.min.js"><?php echo '</script'; ?>
->                 
-        
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/moment.min.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/daterangepicker/daterangepicker.js"><?php echo '</script'; ?>
->
-        <!-- END THIS PAGE PLUGINS-->        
-
-        <!-- START TEMPLATE -->
-        <!-- <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/settings.js"><?php echo '</script'; ?>
-> -->
-        
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins.js"><?php echo '</script'; ?>
->        
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/actions.js"><?php echo '</script'; ?>
->
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/plugins/datatables/jquery.dataTables.min.js"><?php echo '</script'; ?>
->
-        
-        <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['assets_url']->value;?>
-js/demo_dashboard.js"><?php echo '</script'; ?>
->
-        <!-- END TEMPLATE -->
-    <!-- END SCRIPTS -->         
+   
     </body>
 </html>
 

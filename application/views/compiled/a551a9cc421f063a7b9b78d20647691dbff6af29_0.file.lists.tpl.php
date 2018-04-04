@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-03 12:14:07
+/* Smarty version 3.1.30, created on 2018-04-04 11:35:24
   from "C:\xampp\htdocs\FutsalKu\application\modules\masterdata\views\merchant_goods\lists.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ac353ef2d1e95_79432237',
+  'unifunc' => 'content_5ac49c5cabd003_84076635',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a551a9cc421f063a7b9b78d20647691dbff6af29' => 
     array (
       0 => 'C:\\xampp\\htdocs\\FutsalKu\\application\\modules\\masterdata\\views\\merchant_goods\\lists.tpl',
-      1 => 1522657285,
+      1 => 1522763713,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ac353ef2d1e95_79432237 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ac49c5cabd003_84076635 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="row">
         <div class="panel panel-default">
@@ -42,30 +42,29 @@ masterdata/merchant_goods/add"><button type="button" class="btn btn-success acti
                         </tr>
                         </thead>
                         <tbody>
+                         <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['data_barang']->value, 'row');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+?>
                             <tr>
-                                <td>AQUABSR</td>
-                                <td>Aqua Botol Besar</td>
-                                <td>Minuman</td>
-                                <td>5.000,00</td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['row']->value['store_goods_code'];?>
+</td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['row']->value['store_goods_name'];?>
+</td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['row']->value['store_goods_type'];?>
+</td>
+                                <td>Rp.<?php echo $_smarty_tpl->tpl_vars['row']->value['store_goods_price'];?>
+</td>
                                 <td>Aktif</td>
                                 <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
                             </tr>
-                            <tr>
-                                <td>PCRSDG</td>
-                                <td>Pocari Sweat Sedang</td>
-                                <td>Minuman</td>
-                                <td>6.000,00</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
-                            <tr>
-                                <td>MNMMZN</td>
-                                <td>Mizone</td>
-                                <td>Minuman</td>
-                                <td>6.000,00</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
+                        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                         </tbody>
                     </table>
                 </div>

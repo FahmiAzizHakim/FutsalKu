@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-03 14:49:59
+/* Smarty version 3.1.30, created on 2018-04-04 10:00:05
   from "C:\xampp\htdocs\FutsalKu\application\modules\masterdata\views\lapangan\lists.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ac37877ee8345_41202804',
+  'unifunc' => 'content_5ac48605e001e7_15207207',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b9a39491e1ae4971821f3c5f7b53001ce6bc5ffe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\FutsalKu\\application\\modules\\masterdata\\views\\lapangan\\lists.tpl',
-      1 => 1522657285,
+      1 => 1522828660,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ac37877ee8345_41202804 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ac48605e001e7_15207207 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="row">
         <div class="panel panel-default">
@@ -66,30 +66,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
-                            <tr>
-                                <td>1</td>
-                                <td>Sentetis 1</td>
-                                <td>Indoor</td>
-                                <td>Rumput Sintetis</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Sentetis 2</td>
-                                <td>Indoor</td>
-                                <td>Rumput Sintetis</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Plur 1</td>
-                                <td>Outdoor</td>
-                                <td>Semen</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
