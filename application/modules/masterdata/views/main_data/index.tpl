@@ -5,36 +5,35 @@
             <form role="form">
                 <div class="form-group">
 	                <label>Nama Tempat Futsal</label>
-	                <input name="futsal_name"type="text" class="form-control" value="Palad Futsal" readonly="readonly" />
+	                <input name="futsal_name" type="text" class="form-control" value={$data_company.company_name} readonly="readonly" />
                 </div>
                 <div class="form-group">
                     <label>Nama Pemilik Lapangan</label>
-                    <input name="futsal_owner"type="text" class="form-control" value="John Doe" readonly="readonly"/>
+                    <input name="futsal_owner" type="text" class="form-control" value={$data_company.company_owner} readonly="readonly"/>
                 </div>
                 <div class="form-group">
                     <label>Daerah</label>
-                    <input name="futsal_place"type="text" class="form-control" value="Pulogadung" readonly="readonly"/>
+                    <input name="futsal_place" type="text" class="form-control" value={$data_company.company_districtcode} readonly="readonly"/>
                 </div>
                 <div class="form-group">
                     <label>Alamat</label>
-                    <textarea name="futsal_address" class="form-control" value="Pasar Palad, Pulogadung" readonly="readonly">
-                    </textarea>
+                    <input name="futsal_address" type="text" class="form-control" value={$data_company.company_address} readonly="readonly"/>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input name="futsal_email" type="text" class="form-control" value="palad@test.com" readonly="readonly"/>
+                    <input name="futsal_email" type="text" class="form-control" value={$data_company.company_email} readonly="readonly"/>
                 </div>
                 <div class="form-group">
                     <label>No. Telp 1</label>
-                    <input name="futsal_phone1" type="number" class="form-control" value="0212213213" readonly="readonly"/>
+                    <input name="futsal_phone1" type="number" class="form-control" value={$data_company.company_phone1} readonly="readonly"/>
                 </div>
                 <div class="form-group">
                     <label>No. Telp 2</label>
-                    <input name="futsal_phone2" type="number" class="form-control" value="1231231" readonly="readonly"/>
+                    <input name="futsal_phone2" type="number" class="form-control" value={$data_company.company_phone1} readonly="readonly"/>
                 </div>
                 <div class="form-group">
                     <label>Jam Buka</label>
-                    <select name="price_timefrom"class="form-control select" placeholder="Dari Jam" style="width:200px;">
+                    <select  id="company_open_hour" name="company_open_hour" class="form-control select" style="width:200px;" value="2">
                         <option value="1">01.00</option>
                         <option value="2">02.00</option>
                         <option value="3">03.00</option>
@@ -63,7 +62,7 @@
                 </div>
                 <div class="form-group">
                     <label>Jam Tutup</label>
-                    <select name="price_timefrom"class="form-control select" placeholder="Dari Jam" style="width:200px;">
+                    <select id="company_close_hour" name="company_close_hour" class="form-control select" style="width:200px;">
                         <option value="1">01.00</option>
                         <option value="2">02.00</option>
                         <option value="3">03.00</option>
@@ -95,3 +94,17 @@
         </div>
     </div>
 </div>
+<script>
+    {literal}
+    $(function(){
+        {/literal}
+        alert('{$data_company.company_open_hour}');
+        var open = '{$data_company.company_open_hour}';
+        var close = '{$data_company.company_close_hour}';
+        {literal}
+        $('select[name=company_open_hour]').val("2");
+        $('#company_close_hour').val(close);
+    });
+    {/literal}
+    
+</script>
