@@ -27,7 +27,11 @@ class Lapangan extends MY_Controller {
 		$param_day = array('code_category' => 'DYT');
 		$day_type = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_day)), true);
 
+		$param_lst_fieldno = array('data' => 'field_no', 'table' => 'MST_ADMFIELDS', 'company_code' => 'RDCNT');
+		$field_no = json_decode(($this->curl->simple_get($this->API.'Master_data/last_no', $param_lst_fieldno)), true);
+
 		$this->templates->assign( 'day_type', $day_type);
+		$this->templates->assign( 'field_no', $field_no['data']+1);
 		$this->templates->assign( 'field_room', $field_room);
 		$this->templates->assign( 'field_type', $field_type);
 		$this->layout('lapangan/add', '');

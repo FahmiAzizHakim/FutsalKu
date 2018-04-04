@@ -27,30 +27,6 @@
                                     <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
                                 </tr>
                             {/foreach}
-                            <tr>
-                                <td>1</td>
-                                <td>Sentetis 1</td>
-                                <td>Indoor</td>
-                                <td>Rumput Sintetis</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Sentetis 2</td>
-                                <td>Indoor</td>
-                                <td>Rumput Sintetis</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Plur 1</td>
-                                <td>Outdoor</td>
-                                <td>Semen</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Transaksi extends MY_Controller {
+class toko extends MY_Controller {
 
 	function __construct()
 	{
@@ -9,13 +9,12 @@ class Transaksi extends MY_Controller {
 
 	}
 
-	// public function index()
-	// {
- //    	$this->layout('lists', '');
-	// }
+	public function index()
+	{
+    	$this->layout('toko/lists', '');
+	}
 	public function add()
 	{
-		$this->layout('add', '');
+		$this->layout('toko/add', '');
 	}
-
 }

@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2018-04-03 15:34:30
+  from "C:\xampp\htdocs\FutsalKu\application\modules\home\views\home.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5ac382e67e1221_92278728',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '71d9f19889f91d2ab3366b5a0d2fb01df19dde81' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\FutsalKu\\application\\modules\\home\\views\\home.tpl',
+      1 => 1522762070,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5ac382e67e1221_92278728 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <div class="row col-md-12">
 <div class="panel panel-default">                                
     <div class="panel-body">
@@ -20,7 +44,8 @@
             <div class="col-md-12">
                 <label>JAM : </label> 
                 <div class="btn-group btn-group-justified">
-                <a href="{$base_url}booking/add" class="btn btn-primary">06</a>
+                <a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+booking/add" class="btn btn-primary">06</a>
                 <a href="#" class="btn btn-primary">07</a>
                 <a href="#" class="btn btn-primary">08</a>
                 <a href="#" class="btn btn-primary">09</a>
@@ -44,4 +69,5 @@
         </div>
     </div>
 </div>
-</div>
+</div><?php }
+}

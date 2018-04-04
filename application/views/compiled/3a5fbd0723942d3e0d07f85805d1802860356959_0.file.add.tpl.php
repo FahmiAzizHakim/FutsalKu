@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2018-04-03 14:52:44
+  from "C:\xampp\htdocs\FutsalKu\application\modules\masterdata\views\lapangan\add.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5ac3791cdee2d3_62856925',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3a5fbd0723942d3e0d07f85805d1802860356959' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\FutsalKu\\application\\modules\\masterdata\\views\\lapangan\\add.tpl',
+      1 => 1522657285,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5ac3791cdee2d3_62856925 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <div class="row">
     <div class="panel panel-default">
         <div class="panel-body">
@@ -5,40 +29,58 @@
             <form role="form">
                 <div class="form-group">
 	                <label>Nama Lapangan</label>
-	                <input id="field_name" name="field_name" type="text" class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <label>No Lapangan</label>
-                    <input id="field_no" name="field_no" type="text" class="form-control" value="{$field_no}" readonly="readonly" />
+	                <input name="field_name"type="text" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label>Ruangan</label>
-                    <select id="field_room" name="field_room" class="form-control select">
+                    <select name="field_room" class="form-control select">
                     <option></option>
-                    {foreach from=$field_room item=row}
-                        <option value="{$row.code_code}">{$row.code_name}</option>
-                    {/foreach}
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['field_room']->value, 'row');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['code_code'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value['code_name'];?>
+</option>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Jenis Lapangan</label>
-                    <select id="field_type" name="field_type" class="form-control select">
+                    <select name="field_type" class="form-control select">
                     <option></option>
-                    {foreach from=$field_type item=row}
-                        <option value="{$row.code_code}">{$row.code_name}</option>
-                    {/foreach}
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['field_type']->value, 'row');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['code_code'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value['code_name'];?>
+</option>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Disediakan Bola</label>
-                    <select id="field_ball" name="field_ball" class="form-control select">
+                    <select name="field_ball" class="form-control select">
                     <option value="OPTYS">Ya</option>
                     <option value="OPTNO">Tidak</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Aktif Status</label>
-                    <select id="activestatus" name="activestatus" class="form-control select">
+                    <select name="activestatus" class="form-control select">
                     <option value="ATSAC">Aktif</option>
                     <option value="ATSNA">Non Aktif</option>
                     </select>
@@ -46,7 +88,7 @@
 
                 <div class="form-group">
                     <label>Harga Booking</label>
-                    <input id="field_book_price" name="field_book_price" type="number" class="form-control" placeholder="Harga Booking">
+                    <input name="field_book_price" type="number" class="form-control" placeholder="Harga Booking">
                 </div>
                 
             </form>
@@ -64,9 +106,20 @@
                     <label class="sr-only">Hari</label>
                     <select name="price_timefrom"class="form-control select" placeholder="Dari Jam" style="width:200px;">
                     <option>Hari</option>
-                    {foreach from=$day_type item=row}
-                        <option value="{$row.code_code}">{$row.code_name}</option>
-                    {/foreach}
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['day_type']->value, 'row');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['row']->value['code_code'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row']->value['code_name'];?>
+</option>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                     </select>
                 </div>
             	<div class="form-group">
@@ -176,80 +229,10 @@
                 </table>
             </div>
             <div>
-            <button type="button" id="BtnSubmit" class="btn btn-success active"><span class="fa fa-check"></span>Submit</button>
+            <button type="button" class="btn btn-success active"><span class="fa fa-check"></span>Submit</button>
             <button type="button" class="btn btn-danger active"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
             </div>
         </div>
     </div>
-</div>
-<script type="text/javascript">
-    {literal}
-    $("#BtnSubmit").click(function(){
-    {/literal}
-        var api_url = '{$api_url}';
-    {literal}
-        if($("#field_name").val() == ""){
-            alert("Nama Lapangan Harus Diisi");
-            $("#field_name").focus();
-            return false;
-        };
-        if($("#field_room").val() == ""){
-            alert("Ruangan Lapangan Harus Diisi");
-            $("#field_room").focus();
-            return false;
-        };
-        if($("#field_type").val() == ""){
-            alert("Tipe Lapangan Harus Diisi");
-            $("#field_type").focus();
-            return false;
-        };
-        if($("#field_ball").val() == ""){
-            alert("Bola Harus Diisi");
-            $("#field_ball").focus();
-            return false;
-        };
-        if($("#field_book_price").val() == ""){
-            alert("Harga Lapangan Harus Diisi");
-            $("#field_book_price").focus();
-            return false;
-        };
-
-        noty({text: 'Loading', layout: 'topCenter'});
-        $("#BtnSubmit").attr("disabled", true);
-
-        $.ajax({
-            type: "POST",
-            url: api_url + "Master_data/field_insert",
-            dataType: "json",
-            data: { field_name : $("#field_name").val(),
-                    field_no : $("#field_no").val(),
-                    field_room : $("#field_room").val(),
-                    field_type : $("#field_type").val(),
-                    field_ball : $("#field_ball").val(),
-                    field_book_price : $("#field_book_price").val(),
-                    activestatus : $("#activestatus").val(),
-                    created_by : 'Fahmi',
-                    company_code : 'RDCNT' },
-            success: function(data) {
-                $("#BtnSubmit").removeAttr("disabled");
-                $("#noty_topCenter_layout_container").remove();
-                alert(data.status);
-
-                if(data.status == "success")
-                {
-                    alert("Data Berhasil Diproses");
-                    {/literal}
-                    window.location.replace("{$base_url}masterdata/lapangan");
-                    {literal}
-                }
-                else
-                {
-                    alert("Data Gagal Diproses, Harap Hubungin Call Center");
-                }
-
-            }
-        });
-    });
-    {/literal}
-
-</script>
+</div><?php }
+}
