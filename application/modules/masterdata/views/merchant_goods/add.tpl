@@ -29,9 +29,9 @@
                 </div>
                 <div class="form-group">
                     <label>Aktif Status</label>
-                    <select id="active_status" class="form-control select">
-                    <option value="ACTOK">Aktif</option>
-                    <option value="ACTNA">Non Aktif</option>
+                    <select id="activestatus" class="form-control select">
+                    <option value="ATSAC">Aktif</option>
+                    <option value="ATSNA">Non Aktif</option>
                     </select>
                 </div>
                 <button id="BtnSubmit" type="button" class="btn btn-success active"><span class="fa fa-check"></span>Submit</button>
@@ -92,7 +92,7 @@
                 {
                     alert("Data Berhasil Diproses");
                     {/literal}
-                    window.location.replace("{$base_url}masterdata/lapangan");
+                    window.location.replace("{$base_url}masterdata/merchant_goods");
                     {literal}
                 }
                 else
