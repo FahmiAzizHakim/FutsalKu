@@ -57,7 +57,7 @@
         <script type="text/javascript" src="{$assets_url}js/actions.js"></script>
         <script type="text/javascript" src="{$assets_url}js/plugins/datatables/jquery.dataTables.min.js"></script>
         
-        <script type="text/javascript" src="{$assets_url}js/demo_dashboard.js"></script>
+        <!-- <script type="text/javascript" src="{$assets_url}js/demo_dashboard.js"></script> -->
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->      
 
@@ -105,6 +105,14 @@
                         </ul>
                     </li>
                     <li class="xn-openable">
+                        <a href="#"><span class="fa fa-dollar"></span><span class="xn-text">Transaksi</span></a>
+                        <ul>
+                            <li><a href="{$base_url}transaksi/toko"><span class="fa fa-shopping-cart"></span> Toko</a></li>                            
+                            <li><a href="{$base_url}transaksi/list_booking"><span class="fa fa-book"></span> Booking Lapangan</a></li>
+                            <li><a href="#"><span class="fa fa-money"></span> Pembayaran Lapangan</a></li>
+                        </ul>   
+                    </li>
+                    <li class="xn-openable">
                         <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Laporan</span></a>
                         <ul>
                             <li><a href="layout-boxed.html">Boxed</a></li>
@@ -128,14 +136,7 @@
                             <li><a href="blank.html">Blank Page</a></li>
                         </ul>
                     </li>
-                    <li class="xn-openable">
-                        <a href="#"><span class="fa fa-dollar"></span><span class="xn-text">Transaksi</span></a>
-                        <ul>
-                            <li><a href="{$base_url}transaksi/toko"><span class="fa fa-shopping-cart"></span> Toko</a></li>                            
-                            <li><a href="#"><span class="fa fa-book"></span> Booking Lapngan</a></li>
-                            <li><a href="#"><span class="fa fa-money"></span> Pembayaran Lapangan</a></li>
-                        </ul>   
-                    </li>
+                    
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-dollar"></span><span class="xn-text">Billing</span></a>                        
                         <ul>

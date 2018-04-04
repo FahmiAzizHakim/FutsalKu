@@ -4,6 +4,7 @@
         <h3>Data User</h3>
             <form role="form">
                 <div class="form-group">
+<<<<<<< HEAD
 	                <label>Nama User </label>
 	                <input id="field_name" type="text" class="form-control" placeholder="Nama User">
                 </div>
@@ -11,16 +12,34 @@
                 <div class="form-group">
                     <label>User Code </label>
                     <input id="field_code" type="text" class="form-control" placeholder="User Code">
+=======
+	                <label>Nama </label>
+	                <input type="text" name="field_name" class="form-control" placeholder="Nama">
+                </div>
+           
+                <div class="form-group">
+                    <label>ID </label>
+                    <input type="text" name="field_code" class="form-control" placeholder="ID">
+>>>>>>> a4e8329d0e4306096a7beb294481f1d99c9aa1c5
                 </div>
                 
                 <div class="form-group">
                     <label>Password</label>
+<<<<<<< HEAD
                 <input id="field_password" type="password" class="form-control" placeholder="Password">
                 </div>
                 
                 <div class="form-group">
                     <label>Password</label>
                 <input id="field_password2" type="password" class="form-control" placeholder="Password">
+=======
+                <input type="password" name="field_password" class="form-control" placeholder="Password">
+                </div>
+                
+                <div class="form-group">
+                    <label>Ulangi Password</label>
+                <input type="password" name="field_password2" class="form-control" placeholder="Password">
+>>>>>>> a4e8329d0e4306096a7beb294481f1d99c9aa1c5
                 </div>
 
                 <div class="form-group">

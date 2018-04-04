@@ -24,7 +24,7 @@
                                     <td>{$row.field_room}</td>
                                     <td>{$row.field_type}</td>
                                     <td>{$row.activestatus}</td>
-                                    <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
+                                    <td><button type="button" class="btn btn-success active" onclick="EditLapangan('{$row.field_id}')"><span class="fa fa-pencil"></span>Edit</button></td>
                                 </tr>
                             {/foreach}
                         </tbody>
@@ -33,5 +33,13 @@
             </div>
         </div>
 </div>
+
+<script type="text/javascript">
+base_url = '{$base_url}';
+
+    function EditLapangan(field_id){
+        window.location = base_url + 'masterdata/lapangan/edit?field_id=' + field_id;
+        }
+</script>
                             
                             
