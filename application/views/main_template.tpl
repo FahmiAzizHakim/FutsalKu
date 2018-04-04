@@ -57,7 +57,7 @@
         <script type="text/javascript" src="{$assets_url}js/actions.js"></script>
         <script type="text/javascript" src="{$assets_url}js/plugins/datatables/jquery.dataTables.min.js"></script>
         
-        <script type="text/javascript" src="{$assets_url}js/demo_dashboard.js"></script>
+        <!-- <script type="text/javascript" src="{$assets_url}js/demo_dashboard.js"></script> -->
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->      
 

@@ -5,22 +5,22 @@
             <form role="form">
                 <div class="form-group">
 	                <label>Nama </label>
-	                <input type="text" class="form-control" placeholder="Nama">
+	                <input type="text" name="field_name" class="form-control" placeholder="Nama">
                 </div>
            
                 <div class="form-group">
                     <label>ID </label>
-                    <input type="text" class="form-control" placeholder="ID">
+                    <input type="text" name="field_code" class="form-control" placeholder="ID">
                 </div>
                 
                 <div class="form-group">
                     <label>Password</label>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" name="field_password" class="form-control" placeholder="Password">
                 </div>
                 
                 <div class="form-group">
-                    <label>Password</label>
-                <input type="password" class="form-control" placeholder="Password">
+                    <label>Ulangi Password</label>
+                <input type="password" name="field_password2" class="form-control" placeholder="Password">
                 </div>
 
                 <div class="form-group">
