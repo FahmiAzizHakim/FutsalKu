@@ -4,7 +4,7 @@
         <h3>Data User</h3>
             <form role="form">
                 <div class="form-group">
-<<<<<<< HEAD
+
 	                <label>Nama User </label>
 	                <input id="field_name" type="text" class="form-control" placeholder="Nama User">
                 </div>
@@ -12,34 +12,18 @@
                 <div class="form-group">
                     <label>User Code </label>
                     <input id="field_code" type="text" class="form-control" placeholder="User Code">
-=======
-	                <label>Nama </label>
-	                <input type="text" name="field_name" class="form-control" placeholder="Nama">
-                </div>
-           
-                <div class="form-group">
-                    <label>ID </label>
-                    <input type="text" name="field_code" class="form-control" placeholder="ID">
->>>>>>> a4e8329d0e4306096a7beb294481f1d99c9aa1c5
                 </div>
                 
                 <div class="form-group">
                     <label>Password</label>
-<<<<<<< HEAD
-                <input id="field_password" type="password" class="form-control" placeholder="Password">
-                </div>
-                
-                <div class="form-group">
-                    <label>Password</label>
-                <input id="field_password2" type="password" class="form-control" placeholder="Password">
-=======
-                <input type="password" name="field_password" class="form-control" placeholder="Password">
+
+                    <input id="field_password" type="password" class="form-control" placeholder="Password">
                 </div>
                 
                 <div class="form-group">
                     <label>Ulangi Password</label>
-                <input type="password" name="field_password2" class="form-control" placeholder="Password">
->>>>>>> a4e8329d0e4306096a7beb294481f1d99c9aa1c5
+                    <input id="field_password2" type="password" name="field_password2" class="form-control" placeholder="Password">
+
                 </div>
 
                 <div class="form-group">
@@ -49,6 +33,13 @@
                     {foreach from=$role item=row}
                         <option value="{$row.code_code}">{$row.code_name}</option>
                     {/foreach}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Aktif Status</label>
+                    <select id="activestatus" class="form-control select">
+                    <option value="ATSAC">Aktif</option>
+                    <option value="ATSNA">Non Aktif</option>
                     </select>
                 </div>
                 <div>
@@ -72,13 +63,18 @@
             $("#field_name").focus();
             return false;
         };
+        if($("#field_code").val() == ""){
+            alert("User Code Harus Diisi");
+            $("#field_code").focus();
+            return false;
+        };
         if($("#field_password").val() == ""){
             alert("Password Harus Diisi");
             $("#field_password").focus();
             return false;
 
         };
-        if($("#field_password").val() != $("#field_password2").val()){
+        if($("#field_password2").val() != $("#field_password").val()){
             alert("Password Harus Sama");
             $("#field_password").focus();
             return false;
@@ -102,6 +98,7 @@
                     field_code : $("#field_code").val(),
                     field_password : $("#field_password").val(),
                     field_role : $("#field_role").val(),
+                    activestatus : $("#activestatus").val(),
                     created_by : 'yuni',
                     company_code : 'RDCNT' },
             success: function(data) {
