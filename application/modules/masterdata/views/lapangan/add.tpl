@@ -184,7 +184,9 @@
 </div>
 <script type="text/javascript">
     {literal}
+
     $("#BtnSubmit").click(function(){
+        
     {/literal}
         var api_url = '{$api_url}';
     {literal}
@@ -233,7 +235,7 @@
             success: function(data) {
                 $("#BtnSubmit").removeAttr("disabled");
                 $("#noty_topCenter_layout_container").remove();
-                alert(data.status);
+                // alert(data.status);
 
                 if(data.status == "success")
                 {
