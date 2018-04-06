@@ -22,35 +22,21 @@
                                     <td>{$row.user_name}</td>
                                     <td>{$row.user_group}</td>
                                     <td>{$row.activestatus}</td>
-                                    <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
+                                    <td><button type="button" class="btn btn-success active" onclick="EditUser('{$row.field_id}'><span class="fa fa-pencil"></span>Edit</button></td>
                                 </tr>
                             {/foreach}
-                            <tr>
-                                <td>fahmiaziz</td>
-                                <td>Fahmi Aziz Hakim</td>
-                                <td>Admin</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
-                            <tr>
-                                <td>fahmiaziz</td>
-                                <td>Fahmi Aziz Hakim</td>
-                                <td>Admin</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
-                            <tr>
-                                <td>fahmiaziz</td>
-                                <td>Fahmi Aziz Hakim</td>
-                                <td>Admin</td>
-                                <td>Aktif</td>
-                                <td><button type="button" class="btn btn-success active"><span class="fa fa-pencil"></span>Edit</button></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
 </div>
+<script type="text/javascript">
+    base_url = '{$base_url}';
+
+    function EditUser(user_id){
+        window.location = base_url + 'masterdata/users/edit?user_id=' + user_id;
+        }
+</script>
                             
                             

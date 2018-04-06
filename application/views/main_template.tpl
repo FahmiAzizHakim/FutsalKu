@@ -74,15 +74,20 @@
                     </li>
                     <li class="xn-profile">
                         <!-- <a href="#" class="profile-mini">
-                            <img src="{$assets_url}assets/images/users/avatar.jpg" alt="John Doe"/>
+                            <img src="{$assets_url}assets/images/users/avatar.jpg" alt="{$s_user_name}"/>
                         </a> -->
                         <div class="profile">
 <!--                             <div class="profile-image">
-                                <img src="{$assets_url}assets/images/users/avatar.jpg" alt="John Doe"/>
+                                <img src="{$assets_url}assets/images/users/avatar.jpg" alt="{$s_user_name}"/>
                             </div> -->
                             <div class="profile-data">
-                                <div class="profile-data-name">John Doe</div>
+                                <div class="profile-data-name">{$s_user_name}</div>
                                 <div class="profile-data-title">Palad Futsal</div>
+                                <input type="hidden" name="s_user_name" id="s_user_name" value="{$s_user_name}">
+                                <input type="hidden" name="s_user_id" id="s_user_id" value="{$s_user_id}">
+                                <input type="hidden" name="s_user_code" id="s_user_code" value="{$s_user_code}">
+                                <input type="hidden" name="s_user_role" id="s_user_role" value="{$s_user_role}">
+                                <input type="hidden" name="s_company_code" id="s_company_code" value="{$s_company_code}">
                             </div>
                             <!-- <div class="profile-controls">
                                 <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
@@ -190,8 +195,8 @@
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
                                 <a href="#" class="list-group-item">
                                     <div class="list-group-status status-online"></div>
-                                    <img src="{$assets_url}assets/images/users/user2.jpg" class="pull-left" alt="John Doe"/>
-                                    <span class="contacts-title">John Doe</span>
+                                    <img src="{$assets_url}assets/images/users/user2.jpg" class="pull-left" alt="{$s_user_name}"/>
+                                    <span class="contacts-title">{$s_user_name}</span>
                                     <p>Praesent placerat tellus id augue condimentum</p>
                                 </a>
                                 <a href="#" class="list-group-item">
@@ -236,7 +241,7 @@
                                     <div class="progress progress-small progress-striped active">
                                         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
                                     </div>
-                                    <small class="text-muted">John Doe, 25 Sep 2015 / 50%</small>
+                                    <small class="text-muted">{$s_user_name}, 25 Sep 2015 / 50%</small>
                                 </a>
                                 <a class="list-group-item" href="#">
                                     <strong>Aenean ac cursus</strong>
@@ -250,14 +255,14 @@
                                     <div class="progress progress-small progress-striped active">
                                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">95%</div>
                                     </div>
-                                    <small class="text-muted">John Doe, 23 Sep 2015 / 95%</small>
+                                    <small class="text-muted">{$s_user_name}, 23 Sep 2015 / 95%</small>
                                 </a>
                                 <a class="list-group-item" href="#">
                                     <strong>Cras suscipit ac quam at tincidunt.</strong>
                                     <div class="progress progress-small">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
                                     </div>
-                                    <small class="text-muted">John Doe, 21 Sep 2015 /</small><small class="text-success"> Done</small>
+                                    <small class="text-muted">{$s_user_name}, 21 Sep 2015 /</small><small class="text-success"> Done</small>
                                 </a>                                
                             </div>     
                             <div class="panel-footer text-center">
@@ -295,7 +300,7 @@
                     </div>
                     <div class="mb-footer">
                         <div class="pull-right">
-                            <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                            <a href="{$base_url}/Login/logout" class="btn btn-success btn-lg">Yes</a>
                             <button class="btn btn-default btn-lg mb-control-close">No</button>
                         </div>
                     </div>

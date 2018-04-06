@@ -99,8 +99,8 @@
                     field_password : $("#field_password").val(),
                     field_role : $("#field_role").val(),
                     activestatus : $("#activestatus").val(),
-                    created_by : 'yuni',
-                    company_code : 'RDCNT' },
+                    created_by : $("#s_user_name").val(),
+                    company_code : $("#s_company_code").val() },
             success: function(data) {
                 $("#BtnSubmit").removeAttr("disabled");
                 $("#noty_topCenter_layout_container").remove();
