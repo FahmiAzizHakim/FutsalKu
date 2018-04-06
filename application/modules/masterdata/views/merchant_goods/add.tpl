@@ -81,8 +81,8 @@
                     field_type : $("#field_type").val(),
                     field_price : $("#field_price").val(),
                     activestatus : $("#activestatus").val(),
-                    created_by : 'Fahmi',
-                    company_code : 'RDCNT' },
+                    created_by : $("#s_user_name").val(),
+                    company_code : $("#s_company_code").val() },
                 success: function(data) {
                 $("#BtnSubmit").removeAttr("disabled");
                 $("#noty_topCenter_layout_container").remove();

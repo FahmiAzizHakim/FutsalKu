@@ -14,7 +14,7 @@ class Lapangan extends MY_Controller {
 
 	public function index()
 	{
-		$param = array('company_code' => 'RDCNT');
+		$param = array('company_code' => $this->s_company_code);
 		$data = json_decode(($this->curl->simple_get($this->API.'Master_data/data_field', $param)), true);
 		$this->templates->assign( 'data_lapangan', $data);
     	$this->layout('lapangan/lists', '');
@@ -30,7 +30,7 @@ class Lapangan extends MY_Controller {
 		$param_day = array('code_category' => 'DYT');
 		$day_type = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_day)), true);
 
-		$param_lst_fieldno = array('data' => 'field_no', 'table' => 'MST_ADMFIELDS', 'company_code' => 'RDCNT');
+		$param_lst_fieldno = array('data' => 'field_no', 'table' => 'MST_ADMFIELDS', 'company_code' => $this->s_company_code);
 		$field_no = json_decode(($this->curl->simple_get($this->API.'Master_data/last_no', $param_lst_fieldno)), true);
 
 		$this->templates->assign( 'day_type', $day_type);

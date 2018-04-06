@@ -14,7 +14,7 @@ class Users extends MY_Controller {
 
 	public function index()
 	{
-		$param = array('company_code' => 'RDCNT');
+		$param = array('company_code' => $this->s_company_code);
 		$field_user = json_decode(($this->curl->simple_get($this->API.'Master_data/data_users', $param)), true);
 		$this->templates->assign( 'data_users', $field_user);
     	$this->layout('users/lists', '');

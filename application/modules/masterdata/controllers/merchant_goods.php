@@ -14,7 +14,7 @@ class Merchant_Goods extends MY_Controller {
 
 	public function index()
 	{
-		$param = array('company_code' => 'RDCNT');
+		$param = array('company_code' => $this->s_company_code);
 		$data = json_decode(($this->curl->simple_get($this->API.'Master_data/data_goods', $param)), true);
 		$this->templates->assign( 'data_barang', $data);
     	$this->layout('merchant_goods/lists', '');

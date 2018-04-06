@@ -237,8 +237,8 @@
                     company_open_hour : $("#company_open_hour").val(),
                     company_close_hour : $("#company_close_hour").val(),
                     activestatus : $("#activestatus").val(),
-                    created_by : 'BERI',
-                    company_code : 'RDCNT' },
+                    created_by :  $("#s_user_name").val(),
+                    company_code : $("#s_company_code").val() },
             success: function(data) {
                 $("#BtnSubmit").removeAttr("disabled");
                 $("#noty_topCenter_layout_container").remove();

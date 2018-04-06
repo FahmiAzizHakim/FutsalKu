@@ -14,7 +14,7 @@ class Main_Data extends MY_Controller {
 
 	public function index()
 	{
-		$param = array('company_code' => 'RDCNT');
+		$param = array('company_code' => $this->s_company_code);
 		$data = json_decode(($this->curl->simple_get($this->API.'Master_data/data_company', $param)), true);
 
 		$this->templates->assign( 'data_company', $data);
