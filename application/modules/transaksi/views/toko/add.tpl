@@ -1,14 +1,14 @@
 <div class="row">
     <div class="panel panel-default">
         <div class="panel-body">
-        <h3>Data Dagangan</h3>
+        <h3>Kasir Toko</h3>
             <form role="form">
                 <div class="form-group">
-                    <label>Kode Barang</label>
+                    <label>ID Transaksi</label>
                     <input name="field_name"type="text" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label>Nama Barang</label>
+                    <label>Jumlah Barang</label>
                     <input name="field_name"type="text" class="form-control"/>
                 </div>
                 <div class="form-group">
