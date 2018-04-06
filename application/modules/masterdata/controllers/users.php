@@ -29,20 +29,11 @@ class Users extends MY_Controller {
 		$this->layout('users/add', '');
 	}
 
-	public function add()
-	{
-		$param_fieldtype = array('code_category' => 'USR');
-		$field_role = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
-
-		$this->templates->assign( 'role', $field_role);
-		$this->layout('users/add', '');
-	}
-
-	public function add()
+	public function edit()
 	{
 		$param_user = array('company_code' => $this->s_company_code,
 									'id' => $this->input->get('user_id'));
-		$userdata = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_user)), true);
+		$userdata = json_decode(($this->curl->simple_get($this->API.'Master_data/single_user', $param_user)), true);
 
 		$param_fieldtype = array('code_category' => 'USR');
 		$field_role = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);

@@ -22,7 +22,7 @@
                                     <td>{$row.user_name}</td>
                                     <td>{$row.user_group}</td>
                                     <td>{$row.activestatus}</td>
-                                    <td><button type="button" class="btn btn-success active" onclick="EditUser('{$row.field_id}'><span class="fa fa-pencil"></span>Edit</button></td>
+                                    <td><button type="button" class="btn btn-success active" onclick="EditUser('{$row.user_id}')"><span class="fa fa-pencil"></span>Edit</button></td>
                                 </tr>
                             {/foreach}
                         </tbody>
@@ -33,10 +33,11 @@
 </div>
 <script type="text/javascript">
     base_url = '{$base_url}';
-
+    {literal}
     function EditUser(user_id){
         window.location = base_url + 'masterdata/users/edit?user_id=' + user_id;
         }
+    {/literal}
 </script>
                             
                             
