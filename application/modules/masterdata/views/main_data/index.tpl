@@ -122,8 +122,9 @@
         $('#futsal_email').val(company_email);
         $('#futsal_phone1').val(company_phone1);     
         $('#futsal_phone2').val(company_phone2);
-        $('#company_open_hour option:selected').val(company_open_hour);
-        $('#company_close_hour option:selected').val(company_close_hour);
+        $('#company_open_hour').val(company_open_hour);
+        $('#company_close_hour').val(company_close_hour);
+        $('.form-control').selectpicker('refresh');
 
         //set attribut
         $("#futsal_name").attr("readonly", "readonly");
@@ -162,8 +163,9 @@
         $('#futsal_email').val(company_email);
         $('#futsal_phone1').val(company_phone1);     
         $('#futsal_phone2').val(company_phone2);
-        $('#company_open_hour option:selected').val(company_open_hour);
-        $('#company_close_hour option:selected').val(company_close_hour);
+        $('#company_open_hour').val(company_open_hour);
+        $('#company_close_hour').val(company_close_hour);
+        $('.form-control').selectpicker('refresh');
 
         //set attribut
         $("#futsal_name").attr("readonly", "readonly");
