@@ -47,7 +47,7 @@
 var store_goods_id = "{$userdata.store_goods_id}";
 var field_code = "{$userdata.store_goods_code}";
 var field_name = "{$userdata.store_goods_name}";
-var field_type = "{$userdata.atore_goods_type}";
+var field_type = "{$userdata.store_goods_type}";
 var field_price = "{$userdata.store_goods_price}";
 var activestatus = "{$userdata.activestatus}";
 var api_url = '{$api_url}';
@@ -97,7 +97,7 @@ $(function(){
                     field_type : $("#field_type").val(),
                     field_price : $("#field_price").val(),
                     activestatus : $("#activestatus").val(),
-                    created_by : $("#s_user_name").val(),
+                    lastupd_by : $("#s_user_code").val(),
                     company_code : $("#s_company_code").val() },
             success: function(data) {
                 $("#BtnSubmit").removeAttr("disabled");
