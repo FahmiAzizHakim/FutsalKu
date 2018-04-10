@@ -15,11 +15,9 @@
                     <label>Jenis Barang</label>
                     <select id="field_type" class="form-control select">
                     <option></option>
-                    <option value="GDTFOD">Makanan</option>
-                    <option value="GDTDRK">Minuman</option>
-                    <option value="GDTDSCK">Snack/Jajanan</option>
-                    <option value="GDTEQP">Peralatan Futsal</option>
-                    <option value="GDTOTH">Lainnya</option>
+                    {foreach from=$field_type item=row}
+                    <option value="{$row.code_code}">{$row.code_name}</option>
+                    {/foreach}
                     </select>
                 </div>
                 <div class="form-group">
