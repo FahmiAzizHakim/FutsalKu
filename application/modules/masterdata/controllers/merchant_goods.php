@@ -37,6 +37,7 @@ class Merchant_Goods extends MY_Controller {
 		$param_user = array('company_code' => $this->s_company_code,
 									'id' => $this->input->get('store_goods_id'));
 		$userdata = json_decode(($this->curl->simple_get($this->API.'Master_data/single_goods', $param_user)), true);
+		// print_r($userdata);die();
 
 		$param_fieldtype = array('code_category' => 'USR');
 		$field_role = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
