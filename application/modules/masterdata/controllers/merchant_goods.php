@@ -31,12 +31,12 @@ class Merchant_Goods extends MY_Controller {
 		$this->layout('merchant_goods/add', '');
 	}
 
-<<<<<<< HEAD
+
 	public function edit()
 	{
 		$param_user = array('company_code' => $this->s_company_code,
-									'id' => $this->input->get('user_id'));
-		$userdata = json_decode(($this->curl->simple_get($this->API.'Master_data/single_user', $param_user)), true);
+									'id' => $this->input->get('store_goods_id'));
+		$userdata = json_decode(($this->curl->simple_get($this->API.'Master_data/single_goods', $param_user)), true);
 
 		$param_fieldtype = array('code_category' => 'USR');
 		$field_role = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
@@ -45,6 +45,4 @@ class Merchant_Goods extends MY_Controller {
 		$this->templates->assign( 'userdata', $userdata);
 		$this->layout('merchant_goods/edit', '');
 	}
-=======
->>>>>>> 87f477a0c53fa6f1529ddb142536344461ed7e91
 }
