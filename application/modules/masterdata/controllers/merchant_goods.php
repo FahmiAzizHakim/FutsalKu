@@ -15,6 +15,8 @@ class Merchant_Goods extends MY_Controller {
 	public function index()
 	{
 		$param = array('company_code' => $this->s_company_code);
+
+
 		$data = json_decode(($this->curl->simple_get($this->API.'Master_data/data_goods', $param)), true);
 		$this->templates->assign( 'data_barang', $data);
     	$this->layout('merchant_goods/lists', '');
@@ -22,9 +24,14 @@ class Merchant_Goods extends MY_Controller {
 
 	public function add()
 	{
+		$param_fieldtype = array('code_category' => 'GDT');
+		$field_type = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
+
+		$this->templates->assign( 'field_type', $field_type);
 		$this->layout('merchant_goods/add', '');
 	}
 
+<<<<<<< HEAD
 	public function edit()
 	{
 		$param_user = array('company_code' => $this->s_company_code,
@@ -38,4 +45,6 @@ class Merchant_Goods extends MY_Controller {
 		$this->templates->assign( 'userdata', $userdata);
 		$this->layout('merchant_goods/edit', '');
 	}
+=======
+>>>>>>> 87f477a0c53fa6f1529ddb142536344461ed7e91
 }
