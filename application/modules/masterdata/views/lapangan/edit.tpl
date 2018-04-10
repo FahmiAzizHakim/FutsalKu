@@ -14,6 +14,7 @@
                 <div class="form-group">
                     <label>Ruangan</label>
                     <select id="field_room" name="field_room" class="form-control select">
+                    <option></option>
                     {foreach from=$field_room item=row}
                         <option value="{$row.code_code}">{$row.code_name}</option>
                     {/foreach}
@@ -22,6 +23,7 @@
                 <div class="form-group">
                     <label>Jenis Lapangan</label>
                     <select id="field_type" name="field_type" class="form-control select">
+                    <option></option>
                     {foreach from=$field_type item=row}
                         <option value="{$row.code_code}">{$row.code_name}</option>
                     {/foreach}
