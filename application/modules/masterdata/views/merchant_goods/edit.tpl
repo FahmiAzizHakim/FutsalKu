@@ -59,6 +59,7 @@ $(function(){
     $("#field_type").val(field_type);
     $("#field_price").val(field_price);
     $("#activestatus").val(activestatus);
+    $('.form-control').selectpicker('refresh');
 });
 
     $("#BtnSubmit").click(function(){
