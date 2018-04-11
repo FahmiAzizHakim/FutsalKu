@@ -113,7 +113,7 @@
                         <a href="#"><span class="fa fa-dollar"></span><span class="xn-text">Transaksi</span></a>
                         <ul>
                             <li><a href="{$base_url}transaksi/toko"><span class="fa fa-shopping-cart"></span> Toko</a></li>                            
-                            <li><a href="{$base_url}transaksi/list_booking"><span class="fa fa-book"></span> Booking Lapangan</a></li>
+                            <li><a href="{$base_url}booking"><span class="fa fa-book"></span> Booking Lapangan</a></li>
                             <li><a href="#"><span class="fa fa-money"></span> Pembayaran Lapangan</a></li>
                         </ul>   
                     </li>

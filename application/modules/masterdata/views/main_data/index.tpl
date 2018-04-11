@@ -91,8 +91,8 @@
                     </select>
                 </div>
                 <button id="btnedit" type="button" class="btn btn-info active"><span class="fa fa-edit"></span>Edit</button>
-                <button id="btncancel" type="button" class="btn btn-info active"><span class="fa fa-undo"></span>Cancel</button>
-                <button id="btnsave" type="button" class="btn btn-info active"><span class="fa fa-save"></span>Save</button>
+                <button id="btncancel" type="button" class="btn btn-danger active"><span class="fa fa-undo"></span>Cancel</button>
+                <button id="btnsave" type="button" class="btn btn-success active"><span class="fa fa-save"></span>Save</button>
             </form>
         </div>
     </div>
