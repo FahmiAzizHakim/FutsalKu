@@ -13,7 +13,7 @@
                             <th>Jam Booking</th>
                             <th>Durasi</th>
                             <th>Status</th>
-                            <th>Void</th>
+                            <th align="center">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -24,7 +24,7 @@
                                 <td value='{$row.trx_messages_hour}'>{$row.trx_messages_hour}</td>
                                 <td value='{$row.trx_of_hours}'>{$row.trx_of_hours}</td>
                                 <td value='{$row.activestatus}'>{$row.activestatus}</td>
-                                <td><button id="BtnTrx" type="button" class="btn btn-danger active" onclick="VoidBooking('{$row.trx_no}')"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td><button id="BtnTrx" type="button" class="btn btn-danger active" onclick="VoidBooking('{$row.trx_no}')"><span class="glyphicon glyphicon-remove">Batal</span></button><button id="BtnTrx" type="button" class="btn btn-info active" onclick="EditBooking('{$row.trx_no}')"><span class="fa fa-edit">Edit</span></button></td>
                             </tr>
                             {/foreach}
                         </tbody>
@@ -34,9 +34,10 @@
         </div>
 </div>
 <script >
-    
+api_url = '{$api_url}';
+base_url = '{$base_url}';   
         function VoidBooking(trx_no){
-        var api_url = '{$api_url}';
+        
         {literal}
 
         noty({text: 'Loading', layout: 'topCenter'});
@@ -66,6 +67,10 @@
             }
         });
         {/literal}
+        }
+
+        function EditBooking(trx_no){
+            window.location = base_url + 'booking/edit?trx_no=' + trx_no;
         }
 </script>
                             
