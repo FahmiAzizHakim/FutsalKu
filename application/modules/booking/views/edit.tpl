@@ -58,19 +58,36 @@
     </div>
 </div>
 <script type="text/javascript">
-    var field_no = "{$field_no}";
-    var date = "{$date}";
+    var trx_id_player = "{$get_single_data.trx_id_player}";
+    var trx_no = "{$get_single_data.trx_no}";
+    var trx_name = "{$get_single_data.trx_name}";
+    var trx_phone_number = "{$get_single_data.trx_phone_number}";
+    var trx_email = "{$get_single_data.trx_email}";
+    var trx_field_no = "{$get_single_data.trx_field_no}";
+    var trx_messages_hour = "{$get_single_data.trx_messages_hour}";
+    var trx_of_hours = "{$get_single_data.trx_of_hours}";
+    var trx_booking_price = "{$get_single_data.trx_booking_price}";
+    var trx_grandtotal_price = "{$get_single_data.trx_grandtotal_price}";
 
     {literal}
     //set val
-    $("#trx_no").val(field_no);
-    $("#trx_messages_hour").val(date);
+    $("#trx_id_player").val(trx_id_player);
+    $("#trx_no").val(trx_no);
+    $("#trx_name").val(trx_name);
+    $("#trx_phone_number").val(trx_phone_number);
+    $("#trx_email").val(trx_email);
+    $("#trx_field_no").val(trx_field_no);
+    $("#trx_messages_hour").val(trx_messages_hour);
+    $("#trx_of_hours").val(trx_of_hours);
+    $("#trx_booking_price").val(trx_booking_price);
+    $("#trx_grandtotal_price").val(trx_grandtotal_price);
     //set attr
     $("#trx_no").attr('readonly', 'readonly');
     $("#trx_of_hours").attr('type', 'number');
     $("#trx_booking_price").attr('type', 'number');
     $("#trx_grandtotal_price").attr('type', 'number');
     $("#trx_messages_hour").attr('type', 'time');
+    $('.form-control').selectpicker('refresh');
     {/literal}
 
     $("#trx_id_player").focusout(function(){
@@ -117,7 +134,7 @@
 
         $.ajax({
             type: "POST",
-            url: api_url + "Booking_data/trx_insert",
+            url: api_url + "Booking_data/trx_update",
             dataType: "json",
             data: { trx_no : $("#trx_no").val(),
                     trx_id_player : $("#trx_id_player").val(),

@@ -24,10 +24,10 @@ class booking extends MY_Controller {
 
 	public function add()
 	{
-		$param_lst_fieldno = array('data' => 'trx_id', 'table' => 'TRX_FIELDMESSAGES', 'company_code' => $this->s_company_code);
+		$param_lst_fieldno = array('data' => 'trx_id', 'table' => 'TRX_FIELDBOOKING', 'company_code' => $this->s_company_code);
 
 		$get_field_no = json_decode(($this->curl->simple_get($this->API.'Booking_data/data_field', $param_lst_fieldno)), true);
-
+		// print_r($get_field_no);die;
 		$get_last_no = json_decode(($this->curl->simple_get($this->API.'Booking_data/last_no', $param_lst_fieldno)), true);
 
 		$last_no = $get_last_no['data']+1;
@@ -36,6 +36,19 @@ class booking extends MY_Controller {
 		$this->templates->assign('get_field_no',$get_field_no);
 		$this->templates->assign('date',date("H:i"));
 		$this->layout('add', '');
+	}
+
+	public function edit()
+	{
+		$param_lst_fieldno = array('data' => $this->input->get('trx_no'), 'table' => 'TRX_FIELDBOOKING', 'company_code' => $this->s_company_code);
+
+		$get_field_no = json_decode(($this->curl->simple_get($this->API.'Booking_data/data_field', $param_lst_fieldno)), true);
+
+		$get_single_data = json_decode(($this->curl->simple_get($this->API.'Booking_data/single_booking', $param_lst_fieldno)), true);
+// print_r($get_single_data);die;
+		$this->templates->assign('get_single_data',$get_single_data);
+		$this->templates->assign('get_field_no',$get_field_no);
+		$this->layout('edit', '');
 	}
 
 }
