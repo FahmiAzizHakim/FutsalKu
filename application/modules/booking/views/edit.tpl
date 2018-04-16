@@ -68,6 +68,8 @@
     var trx_of_hours = "{$get_single_data.trx_of_hours}";
     var trx_booking_price = "{$get_single_data.trx_booking_price}";
     var trx_grandtotal_price = "{$get_single_data.trx_grandtotal_price}";
+    var created_date = "{$get_single_data.created_date}";
+    var created_by = "{$get_single_data.created_by}";
 
     {literal}
     //set val
@@ -148,7 +150,9 @@
                     trx_grandtotal_price : $("#trx_grandtotal_price").val(),
                     activestatus : 'ATSAC',
                     created_by : $("#s_user_name").val(),
-                    company_code : $("#s_company_code").val() },
+                    company_code : $("#s_company_code").val(),
+                    created_by2 : created_by,
+                    created_date : created_date },
             success: function(data) {
                 $("#BtnSubmit").removeAttr("disabled");
                 $("#BtnCancel").removeAttr("disabled");
@@ -160,6 +164,7 @@
                     alert("Data Berhasil Diproses");
                     {/literal}
                     window.location.replace("{$base_url}booking");
+                    window.open("{$base_url}booking/print_booking/?trx_no="+trx_no);
                     {literal}
                 }
                 else
@@ -173,6 +178,6 @@
     {/literal}
 
     $("#trx_field_no").change(function(){
-      alert('Lapangan Tersedia');      
+      alert('Lapangan Tersedia'); 
     });
 </script>
