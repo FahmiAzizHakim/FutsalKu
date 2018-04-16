@@ -116,8 +116,12 @@
 
                             <li><a href="{$base_url}transaksi/Pengeluaran"><span class="fa fa-location-arrow"></span>Pengeluaran Keuangan</a></li>                            
                             <li><a href="{$base_url}booking"><span class="fa fa-book"></span> Booking Lapangan</a></li>
+<<<<<<< HEAD
 
                             <li><a href="#"><span class="fa fa-money"></span> Pembayaran Lapangan</a></li>
+=======
+                            <li><a href="{$base_url}transaksi/pembayaran"><span class="fa fa-money"></span> Pembayaran Lapangan</a></li>
+>>>>>>> a0abf899b81570a7781562b933e8353d1e4d6698
                         </ul>   
                     </li>
                     <li class="xn-openable">
