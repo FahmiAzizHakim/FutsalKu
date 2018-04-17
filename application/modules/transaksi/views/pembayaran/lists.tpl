@@ -27,7 +27,6 @@
                                 <td value='{$row.trx_grandtotal_price}'>{$row.trx_grandtotal_price}</td>
                                 <td value='{$row.trx_booking_price}'>{$row.trx_booking_price}</td>
                                 <td value='{$row.trx_grandtotal_price - $row.trx_booking_price}'>{$row.trx_grandtotal_price - $row.trx_booking_price}</td>
-                                <td value='{$row.activestatus}'>{$row.activestatus}</td>
                                 <td><button id="BtnTrx" type="button" class="btn btn-danger active" onclick="VoidBooking('{$row.trx_no}')"><span class="glyphicon glyphicon-remove"></span></button></td>
                             </tr>
                             {/foreach}
