@@ -28,7 +28,7 @@ class booking extends MY_Controller {
 
 		$get_field_no = json_decode(($this->curl->simple_get($this->API.'Booking_data/data_field', $param_lst_fieldno)), true);
 		// print_r($get_field_no);die;
-		$get_last_no = json_decode(($this->curl->simple_get($this->API.'Booking_data/last_no', $param_lst_fieldno)), true);
+		$get_last_no = json_decode(($this->curl->simple_get($this->API.'Global_Api/last_no', $param_lst_fieldno)), true);
 
 		$last_no = $get_last_no['data']+1;
 		$field_no = $this->s_company_code.'-'.$last_no;

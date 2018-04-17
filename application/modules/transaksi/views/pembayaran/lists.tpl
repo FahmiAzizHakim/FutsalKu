@@ -27,7 +27,7 @@
                                 <td value='{$row.trx_grandtotal_price}'>{$row.trx_grandtotal_price}</td>
                                 <td value='{$row.trx_booking_price}'>{$row.trx_booking_price}</td>
                                 <td value='{$row.trx_grandtotal_price - $row.trx_booking_price}'>{$row.trx_grandtotal_price - $row.trx_booking_price}</td>
-                                <td><button id="BtnTrx" type="button" class="btn btn-danger active" onclick="VoidBooking('{$row.trx_no}')"><span class="glyphicon glyphicon-remove"></span></button></td>
+                                <td><button id="BtnTrx" type="button" class="btn btn-success active" onclick="AcceptPayment('{$row.trx_no}')"><span class="fa fa-check-square-o"></span></button></td>
                             </tr>
                             {/foreach}
                         </tbody>
@@ -38,8 +38,8 @@
 </div>
 <script >
     
-        function VoidBooking(trx_no){
-        var api_url = '{$api_url}';
+        function AcceptPayment(trx_no){
+        var base_url = '{$base_url}';
         {literal}
 
         noty({text: 'Loading', layout: 'topCenter'});
@@ -47,7 +47,7 @@
 
         $.ajax({
             type: "POST",
-            url: api_url + "Booking_data/trx_void",
+            url: base_url + "transaksi/pembayaran/acceptment",
             dataType: "json",
             data: { param_no : trx_no,
                     user_name : $("#s_user_name").val() },
@@ -58,7 +58,7 @@
                 {
                     alert("Data Berhasil Diproses");
                     {/literal}
-                    window.location.replace("{$base_url}booking");
+                    window.location.replace("{$base_url}pembayaran");
                     {literal}
                 }
                 else
