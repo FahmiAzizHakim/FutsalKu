@@ -51,4 +51,17 @@ class booking extends MY_Controller {
 		$this->layout('edit', '');
 	}
 
+	public function print_booking()
+	{
+		$param_lst_fieldno = array('data' => $this->input->get('trx_no'), 'table' => 'TRX_FIELDBOOKING', 'company_code' => $this->s_company_code);
+
+		$get_single_data = json_decode(($this->curl->simple_get($this->API.'Booking_data/single_booking', $param_lst_fieldno)), true);
+		$get_company_data = json_decode(($this->curl->simple_get($this->API.'Global_Api/data_company', $param_lst_fieldno)), true);
+
+		$this->templates->assign('get_company_data',$get_company_data);
+		$this->templates->assign('get_single_data',$get_single_data);
+		$this->templates->assign('admin',$this->s_user_name);
+		$this->layout_empty('print', '');
+	}
+
 }

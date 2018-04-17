@@ -143,6 +143,7 @@
                     alert("Data Berhasil Diproses");
                     {/literal}
                     window.location.replace("{$base_url}booking");
+                    window.open("{$base_url}booking/print_booking/?trx_no="+trx_no);
                     {literal}
                 }
                 else
