@@ -21,9 +21,9 @@
                             <tr>
                                 <td>{$row.store_goods_code}</td>
                                 <td>{$row.store_goods_name}</td>
-                                <td>{$row.store_goods_type}</td>
+                                <td>{$row.store_goods_type_name}</td>
                                 <td>Rp.{$row.store_goods_price}</td>
-                                <td>Aktif</td>
+                                <td>{$row.activestatus_name}</td>
                                 <td><button type="button" class="btn btn-success active" onclick="EditUser('{$row.store_goods_id}')""><span class="fa fa-pencil"></span>Edit</button></td>
                             </tr>
                         {/foreach}

@@ -20,8 +20,8 @@
                                 <tr>
                                     <td>{$row.user_code}</td>
                                     <td>{$row.user_name}</td>
-                                    <td>{$row.user_group}</td>
-                                    <td>{$row.activestatus}</td>
+                                    <td>{$row.user_group_name}</td>
+                                    <td>{$row.activestatus_name}</td>
                                     <td><button type="button" class="btn btn-success active" onclick="EditUser('{$row.user_id}')"><span class="fa fa-pencil"></span>Edit</button></td>
                                 </tr>
                             {/foreach}

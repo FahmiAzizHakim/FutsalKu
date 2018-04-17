@@ -21,9 +21,9 @@
                                 <tr>
                                     <td>{$row.field_no}</td>
                                     <td>{$row.field_name}</td>
-                                    <td>{$row.field_room}</td>
-                                    <td>{$row.field_type}</td>
-                                    <td>{$row.activestatus}</td>
+                                    <td>{$row.field_room_name}</td>
+                                    <td>{$row.field_type_name}</td>
+                                    <td>{$row.activestatus_name}</td>
                                     <td><button type="button" class="btn btn-success active" onclick="EditLapangan('{$row.field_id}')"><span class="fa fa-pencil"></span>Edit</button></td>
                                 </tr>
                             {/foreach}
