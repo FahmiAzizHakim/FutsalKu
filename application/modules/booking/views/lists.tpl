@@ -23,7 +23,7 @@
                                 <td value='{$row.trx_name}'>{$row.trx_name}</td>
                                 <td value='{$row.trx_messages_hour}'>{$row.trx_messages_hour}</td>
                                 <td value='{$row.trx_of_hours}'>{$row.trx_of_hours}</td>
-                                <td value='{$row.activestatus}'>{$row.activestatus}</td>
+                                <td value='{$row.activestatus}'>{$row.activestatus_name}</td>
                                 <td><button id="BtnTrx" type="button" class="btn btn-danger active" onclick="VoidBooking('{$row.trx_no}')"><span class="glyphicon glyphicon-remove">Batal</span></button><button id="BtnTrx" type="button" class="btn btn-info active" onclick="EditBooking('{$row.trx_no}')"><span class="fa fa-edit">Edit</span></button></td>
                             </tr>
                             {/foreach}
