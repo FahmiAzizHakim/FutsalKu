@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class booking extends MY_Controller {
+class Booking extends MY_Controller {
 
 	function __construct()
 	{
@@ -65,3 +65,4 @@ class booking extends MY_Controller {
 	}
 
 }
+?>
