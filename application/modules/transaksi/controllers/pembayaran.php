@@ -30,14 +30,12 @@ class pembayaran extends MY_Controller {
 		$fin_no = 'PAYMENT'.'-'.$last_no;
 
 		// $param_trx = array('trx_no' => $this->post("trx_no"));
-		$param_trx = array('param_no' => $this->input->post("param_no"),'user_name' => $this->input->post("user_name"));
-		$get_ddbooking = json_decode(($this->curl->simple_post($this->API.'Pembayaran_data/data_dbooking', $param_trx)), true);
+		$param_trx = array('param_no' => $this->input->post("param_no"),'user_name' => $this->input->post("user_name"),'fin_no' => $fin_no);
+
 		
-		$param_trx2 = array('param_no' => $this->input->post("param_no"),'user_name' => $this->input->post("user_name"), 'fin_no' => $fin_no,'param_detail' => $get_ddbooking);
-		$insert_data = json_decode(($this->curl->simple_post($this->API.'Pembayaran_data/insert_data', $param_trx2)), true);
-		print_r($insert_data);die;
+		$insert_data = json_decode(($this->curl->simple_post($this->API.'Pembayaran_data/insert_data', $param_trx)), true);
 		return $insert_data;
-	}
+    }
 
 }
 ?>
