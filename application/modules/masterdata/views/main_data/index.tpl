@@ -13,7 +13,7 @@
                 </div>
                 <div class="form-group">
                     <label>Daerah</label>
-                    <input name="futsal_place" id="futsal_place" type="text" class="form-control" />
+                    <input name="futsal_place" id="futsal_place" type="text" class="form-control" value="{$data_district.district_name}">
                 </div>
                 <div class="form-group">
                     <label>Alamat</label>
@@ -101,6 +101,7 @@
 
         //set variabel
         var api_url = '{$api_url}';
+        var base_url = '{$base_url}';
         var company_id = '{$data_company.company_id}';
         var company_name = '{$data_company.company_name}';
         var company_owner = '{$data_company.company_owner}';
@@ -117,7 +118,6 @@
         //set value
         $('#futsal_name').val(company_name);
         $('#futsal_owner').val(company_owner);
-        $('#futsal_place').val(company_districtcode);
         $('#futsal_address').val(company_address);
         $('#futsal_email').val(company_email);
         $('#futsal_phone1').val(company_phone1);     
@@ -158,7 +158,6 @@
          //set value
         $('#futsal_name').val(company_name);
         $('#futsal_owner').val(company_owner);
-        $('#futsal_place').val(company_districtcode);
         $('#futsal_address').val(company_address);
         $('#futsal_email').val(company_email);
         $('#futsal_phone1').val(company_phone1);     
@@ -229,7 +228,6 @@
             data: { futsal_id : company_id,
                     futsal_name : $("#futsal_name").val(),
                     futsal_owner : $("#futsal_owner").val(),
-                    futsal_place : $("#futsal_place").val(),
                     futsal_address : $("#futsal_address").val(),
                     futsal_email : $("#futsal_email").val(),
                     futsal_phone1 : $("#futsal_phone1").val(),
@@ -249,9 +247,8 @@
                 if(data.status == "success")
                 {
                     alert("Data Berhasil Diproses");
-                    {/literal}
-                    window.location.replace("{$base_url}masterdata/main_data");
-                    {literal}
+
+                    window.location.replace(base_url + "masterdata/main_data");
                 }
                 else
                 {

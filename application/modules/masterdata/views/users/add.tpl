@@ -6,29 +6,29 @@
                 <div class="form-group">
 
 	                <label>Nama User </label>
-	                <input id="field_name" type="text" class="form-control" placeholder="Nama User">
+	                <input id="user_name" type="text" class="form-control" placeholder="Nama User">
                 </div>
            
                 <div class="form-group">
                     <label>User Code </label>
-                    <input id="field_code" type="text" class="form-control" placeholder="User Code">
+                    <input id="user_code" type="text" class="form-control" placeholder="User Code">
                 </div>
                 
                 <div class="form-group">
                     <label>Password</label>
 
-                    <input id="field_password" type="password" class="form-control" placeholder="Password">
+                    <input id="user_password" type="password" class="form-control" placeholder="Password">
                 </div>
                 
                 <div class="form-group">
                     <label>Ulangi Password</label>
-                    <input id="field_password2" type="password" name="field_password2" class="form-control" placeholder="Password">
+                    <input id="user_password2" type="password" name="user_password2" class="form-control" placeholder="Password">
 
                 </div>
 
                 <div class="form-group">
                     <label>Peran</label>
-                    <select id="field_role" name="field_role" class="form-control select">
+                    <select id="user_role" name="user_role" class="form-control select">
                     <option></option>
                     {foreach from=$role item=row}
                         <option value="{$row.code_code}">{$row.code_name}</option>
@@ -38,13 +38,14 @@
                 <div class="form-group">
                     <label>Aktif Status</label>
                     <select id="activestatus" class="form-control select">
+                    <option></option>    
                     <option value="ATSAC">Aktif</option>
                     <option value="ATSNA">Non Aktif</option>
                     </select>
                 </div>
                 <div>
                 <button type="button" id="BtnSubmit" class="btn btn-success active"><span class="fa fa-check"></span>Submit</button>
-                <button type="button" class="btn btn-danger active"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
+                <button type="button" id="BtnCancel" class="btn btn-danger active"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
                 </div>
             </form>
 
@@ -53,36 +54,36 @@
 </div>
 
 <script type="text/javascript">
+    var api_url = '{$api_url}';
+    var base_url = '{$base_url}';
     {literal}
+$(function(){
     $("#BtnSubmit").click(function(){
-    {/literal}
-        var api_url = '{$api_url}';
-    {literal}
-        if($("#field_name").val() == ""){
+        if($("#user_name").val() == ""){
             alert("Nama Harus Diisi");
-            $("#field_name").focus();
+            $("#user_name").focus();
             return false;
         };
-        if($("#field_code").val() == ""){
+        if($("#user_code").val() == ""){
             alert("User Code Harus Diisi");
-            $("#field_code").focus();
+            $("#user_code").focus();
             return false;
         };
-        if($("#field_password").val() == ""){
+        if($("#user_password").val() == ""){
             alert("Password Harus Diisi");
-            $("#field_password").focus();
+            $("#user_password").focus();
             return false;
 
         };
-        if($("#field_password2").val() != $("#field_password").val()){
+        if($("#user_password2").val() != $("#user_password").val()){
             alert("Password Harus Sama");
-            $("#field_password").focus();
+            $("#user_password").focus();
             return false;
             
         };
-        if($("#field_role").val() == ""){
+        if($("#user_role").val() == ""){
             alert("Peran Harus Diisi");
-            $("#field_role").focus();
+            $("#user_role").focus();
             return false;
 
         };
@@ -92,26 +93,24 @@
 
         $.ajax({
             type: "POST",
-            url: api_url + "Master_data/field_insert_user",
+            url: api_url + "Master_data/user_insertr",
             dataType: "json",
-            data: { field_name : $("#field_name").val(),
-                    field_code : $("#field_code").val(),
-                    field_password : $("#field_password").val(),
-                    field_role : $("#field_role").val(),
+            data: { user_name : $("#user_name").val(),
+                    user_code : $("#user_code").val(),
+                    user_password : $("#user_password").val(),
+                    user_role : $("#user_role").val(),
                     activestatus : $("#activestatus").val(),
                     created_by : $("#s_user_name").val(),
                     company_code : $("#s_company_code").val() },
             success: function(data) {
                 $("#BtnSubmit").removeAttr("disabled");
                 $("#noty_topCenter_layout_container").remove();
-                alert(data.status);
 
                 if(data.status == "success")
                 {
                     alert("Data Berhasil Diproses");
-                    {/literal}
-                    window.location.replace("{$base_url}masterdata/users");
-                    {literal}
+                    window.location.replace(base_url + "masterdata/users");
+
                 }
                 else
                 {
@@ -121,6 +120,12 @@
             }
         });
     });
+    
+
+    $("#BtnCancel").click(function(){
+        window.location.replace("{$base_url}masterdata/users");
+    });
+});
     {/literal}
 
 </script>

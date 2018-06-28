@@ -13,7 +13,43 @@ class Home extends MY_Controller {
 	}
 
 	public function index()
-	{
+	{	
+		if ($this->input->get('date') == null) {
+			$date_param =  date("d/m/Y");
+			$date_picker =  date("Y-m-d");
+		}
+		else
+		{
+			$date = $this->input->get('date');
+			$date_param =  date("d/m/Y", strtotime($date));
+			$date_picker =  $date;
+		}
+			//Default field time
+			$param = array('company_code' => 'RDCNT');
+			$time_default = json_decode(($this->curl->simple_get($this->API.'Global_Api/data_timebooking', $param)), true);
+			print_r($time_default);die;
+			//lapangan 1
+			$param1 = array('trx_date' => $date_param ,'trx_field_no' => '1');
+			$time_booking1 = json_decode(($this->curl->simple_get($this->API.'Dashboard/data_timebooking', $param1)), true);
+			if ($time_booking1 == null) {$time_booking1 = '1';}
+			//lapangan 2
+			$param2 = array('trx_date' => $date_param ,'trx_field_no' => '2');
+			$time_booking2 = json_decode(($this->curl->simple_get($this->API.'Dashboard/data_timebooking', $param2)), true);
+			if ($time_booking2 == null) {$time_booking2 = '2';}
+			//lapangan 3
+			$param3 = array('trx_date' => $date_param,'trx_field_no' => '3');
+			$time_booking3 = json_decode(($this->curl->simple_get($this->API.'Dashboard/data_timebooking', $param3)), true);
+			if ($time_booking3 == null) {$time_booking3 = '3';}
+			//lapangan 4
+			$param4 = array('trx_date' => $date_param,'trx_field_no' => '4');
+			$time_booking4 = json_decode(($this->curl->simple_get($this->API.'Dashboard/data_timebooking', $param4)), true);
+			if ($time_booking4 == null) {$time_booking4 = '4';}
+		$this->templates->assign( 'time_default', $time_default);
+		$this->templates->assign( 'time_booking1', $time_booking1);
+		$this->templates->assign( 'time_booking2', $time_booking2);
+		$this->templates->assign( 'time_booking3', $time_booking3);
+		$this->templates->assign( 'time_booking4', $time_booking4);
+		$this->templates->assign( 'date', $date_picker);
     	$this->layout('home', '');
 	}
 	public function daftar()

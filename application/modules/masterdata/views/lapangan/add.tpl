@@ -62,8 +62,8 @@
         	<div class="form-inline" role="form">
                 <div class="form-group">
                     <label class="sr-only">Hari</label>
-                    <select name="price_timefrom"class="form-control select" placeholder="Dari Jam" style="width:200px;">
-                    <option>Hari</option>
+                    <select id="field_day" name="field_day" class="form-control select" placeholder="Dari Jam" style="width:200px;">
+                    <option value="">Hari</option>
                     {foreach from=$day_type item=row}
                         <option value="{$row.code_code}">{$row.code_name}</option>
                     {/foreach}
@@ -71,7 +71,7 @@
                 </div>
             	<div class="form-group">
                     <label class="sr-only">Dari Pukul</label>
-                    <select name="price_timefrom"class="form-control select" placeholder="Dari Jam" style="width:200px;">
+                    <select id="field_timefrom"  name="field_timefrom" class="form-control select" placeholder="Dari Jam" style="width:200px;">
                     <option>Dari Pukul</option>
                     <option value="1">01.00</option>
                     <option value="2">02.00</option>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="form-group">
                     <label class="sr-only">Sampai Pukul</label>
-                    <select name="price_timefrom" class="form-control select" placeholder="Sampai Jam" style="width:200px;">
+                    <select id="field_timeend" name="field_timeend" class="form-control select" placeholder="Sampai Jam" style="width:200px;">
                     <option>Sampai Pukul</option>
                     <option value="1">01.00</option>
                     <option value="2">02.00</option>
@@ -131,12 +131,12 @@
                 </div>
                 <div class="form-group">
 	                <label class="sr-only">Harga</label>
-	                <input class="form-control" type="number" placeholder="Harga" style="width:200px;"/>
+	                <input name= "field_price" id= "field_price" class="form-control" type="number" placeholder="Harga" style="width:200px;"/>
                 </div>                                    
-                <button type="submit" class="btn btn-info btn-condensed"><span class="fa fa-plus"></span></button>
+                <button id="AddRow" type="submit" class="btn btn-info btn-condensed"><span class="fa fa-plus"></span></button>
             </div>
             <div class="table-responsive">
-                <table class="table datatable_simple">
+                <table class="table datatable_simple" id="field_detail">
                   	<thead>
                      	<tr>
                         	<th width="20px">No</th>
@@ -148,30 +148,6 @@
                      	</tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Senin - Jumat</td>
-                            <td>08.00</td>
-                            <td>24.00</td>
-                            <td>150000</td>
-                            <td><button type="button" class="btn btn-danger active"><span class="fa fa-trash"></span>Hapus</button></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Senin - Jumat</td>
-                            <td>08.00</td>
-                            <td>24.00</td>
-                            <td>150000</td>
-                            <td><button type="button" class="btn btn-danger active"><span class="fa fa-trash"></span>Hapus</button></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Senin - Jumat</td>
-                            <td>08.00</td>
-                            <td>24.00</td>
-                            <td>150000</td>
-                            <td><button type="button" class="btn btn-danger active"><span class="fa fa-trash"></span>Hapus</button></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -183,13 +159,12 @@
     </div>
 </div>
 <script type="text/javascript">
+    var api_url = '{$api_url}';
+    var base_url = '{$base_url}';
     {literal}
-
+$(function () {
     $("#BtnSubmit").click(function(){
         
-    {/literal}
-        var api_url = '{$api_url}';
-    {literal}
         if($("#field_name").val() == ""){
             alert("Nama Lapangan Harus Diisi");
             $("#field_name").focus();
@@ -240,9 +215,7 @@
                 if(data.status == "success")
                 {
                     alert("Data Berhasil Diproses");
-                    {/literal}
-                    window.location.replace("{$base_url}masterdata/lapangan");
-                    {literal}
+                    window.location.replace(base_url + "masterdata/lapangan");
                 }
                 else
                 {
@@ -252,6 +225,29 @@
             }
         });
     });
+
+    $('#AddRow').click(function(){
+        $('.odd').closest( 'tr').remove();
+
+        var angka = Math.floor((Math.random() * 99999) + 1);
+        var total_row = $("#field_detail tr").length;
+        $("#field_detail").append('<tr id=row_'+ angka +' class=row_'+ total_row +'><td class="col1">'+ total_row +'</td>'+
+                        '<td <td class="col2"><input type="hidden" value="'+ $("#field_day").val() +'" />'+ $("#field_day option:selected").text() +'</td>'+
+                        '<td class="col3"><input type="hidden" value="'+ $("#field_timefrom").val() +'" />'+$("#field_timefrom option:selected").text()+'</td>'+
+                        '<td class="col4"><input type="hidden" value="'+ $("#field_timeend").val() +'" />'+$("#field_timeend option:selected").text()+'</td>'+
+                        '<td class="col5"><input type="hidden" value="'+ $("#field_price").val() +'" />'+$("#field_price").val()+'</td>'+
+                        '<td class="col6"><button type=button class="btn btn-danger active" onclick=delrow(row_'+ angka +');><span class="fa fa-trash" ></span>Hapus</button></td>'+
+                        '</tr>');
+    });
+});
+
+function delrow(row){
+    $(row).closest('tr').remove();
+    $('#field_detail .col1').text(function (i) {
+          return i + 1;
+        });
+};
+
     {/literal}
 
 </script>

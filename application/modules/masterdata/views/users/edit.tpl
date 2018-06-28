@@ -6,30 +6,30 @@
                 <div class="form-group">
 
 	                <label>Nama User </label>
-	                <input id="field_name" type="text" class="form-control" placeholder="Nama User" readonly="readonly">
-                    <input id="user_id" type="hidden">
+	                <input id="user_name" type="text" class="form-control" placeholder="Nama User" readonly="readonly">
                 </div>
            
                 <div class="form-group">
                     <label>User Code </label>
-                    <input id="field_code" type="text" class="form-control" placeholder="User Code" readonly="readonly">
+                    <input id="user_code" type="text" class="form-control" placeholder="User Code" readonly="readonly">
                 </div>
                 
                 <div class="form-group">
                     <label>Password</label>
-                    <input id="field_password" type="password" class="form-control" placeholder="Password" >
+                    <input id="user_password" name="user_password" type="password" class="form-control" placeholder="Password" >
                 </div>
                 
                 <div class="form-group">
                     <label>Ulangi Password</label>
-                    <input id="field_password2" type="password" name="field_password2" class="form-control" placeholder="Password">
+                    <input id="user_password2" name="user_password2" type="password" name="user_password2" class="form-control" placeholder="Password">
 
                 </div>
 
                 <div class="form-group">
                     <label>Peran</label>
-                    <select id="field_role" name="field_role" class="form-control select">
+                    <select id="user_role" name="user_role" class="form-control select">
                     <option></option>
+                     <!-- <option value="ADM">ADMIN</option> -->
                     {foreach from=$role item=row}
                         <option value="{$row.code_code}">{$row.code_name}</option>
                     {/foreach}
@@ -37,14 +37,15 @@
                 </div>
                 <div class="form-group">
                     <label>Aktif Status</label>
-                    <select id="activestatus" class="form-control select">
+                    <select id="activestatus" name="activestatus" class="form-control select">
+                    <option></option>    
                     <option value="ATSAC">Aktif</option>
                     <option value="ATSNA">Non Aktif</option>
                     </select>
                 </div>
                 <div>
                 <button type="button" id="BtnSubmit" class="btn btn-success active"><span class="fa fa-check"></span>Submit</button>
-                <button type="button" class="btn btn-danger active"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
+                <button type="button" id="BtnCancel" class="btn btn-danger active"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
                 </div>
             </form>
         </div>
@@ -52,72 +53,76 @@
 </div>
 
 <script type="text/javascript">
+    
+var api_url = '{$api_url}';
+var base_url = '{$base_url}';
 var user_id = "{$userdata.user_id}";
 var user_name = "{$userdata.user_name}";
 var user_code = "{$userdata.user_code}";
 var user_role = "{$userdata.user_group}";
-var api_url = '{$api_url}';
+var activestatus = "{$userdata.activestatus}";
 {literal}
 $(function(){
-    $("#user_id").val(user_id);
-    $("#field_name").val(user_name);
-    $("#field_code").val(user_code);
-    $("#field_role").val(user_role);
-});
+    $("#user_name").val(user_name);
+    $("#user_code").val(user_code);
+    $("#user_role").val(user_role);
+    $("#activestatus").val(activestatus);
+    $('.form-control').selectpicker('refresh');
+
+    $("#BtnCancel").click(function(){
+        window.location.replace(base_url + "masterdata/users");
+    });
 
     $("#BtnSubmit").click(function(){
-        if($("#field_name").val() == ""){
+        if($("#user_name").val() == ""){
             alert("Nama Harus Diisi");
-            $("#field_name").focus();
+            $("#user_name").focus();
             return false;
         };
-        if($("#field_code").val() == ""){
+        if($("#user_code").val() == ""){
             alert("User Code Harus Diisi");
-            $("#field_code").focus();
+            $("#user_code").focus();
             return false;
         };
-        if($("#field_password").val() == ""){
+        if($("#user_password").val() == ""){
             alert("Password Harus Diisi");
-            $("#field_password").focus();
+            $("#user_password").focus();
             return false;
 
         };
-        if($("#field_password2").val() != $("#field_password").val()){
+        if($("#user_password2").val() != $("#user_password").val()){
             alert("Password Harus Sama");
-            $("#field_password").focus();
+            $("#user_password").focus();
             return false;
             
         };
-        if($("#field_role").val() == ""){
+        if($("#user_role").val() == ""){
             alert("Peran Harus Diisi");
-            $("#field_role").focus();
+            $("#user_role").focus();
             return false;
         };
 
          noty({text: 'Loading', layout: 'topCenter'});
          $("#BtnSubmit").attr("disabled", true);
-
         $.ajax({
             type: "POST",
-            url: api_url + "Master_data/field_update_user",
-            processData: false,
+            url: api_url + "Master_data/user_update",
             dataType: "json",
-            data: { user_id : $("#user_id").val(),
-                    field_password : $("#field_password").val(),
-                    field_role : $("#field_role").val(),
+            data: { user_id : user_id,
+                    user_password : $("#user_password").val(),
+                    user_role : $("#user_role").val(),
+                    company_code : $("#s_company_code").val(),
                     activestatus : $("#activestatus").val(),
-                    lastupd_by : $("#s_user_code").val(),
-                    company_code : $("#s_company_code").val() },
+                    lastupd_by : $("#s_user_code").val()},
             success: function(data) {
                 $("#BtnSubmit").removeAttr("disabled");
                 $("#noty_topCenter_layout_container").remove();
+                // alert(data.status);
 
                 if(data.status == "success")
                 {
                     alert("Data Berhasil Diproses");
-                    {/literal}
-                    window.location.replace("{$base_url}masterdata/users");
-                    {literal}
+                    window.location.replace(base_url + "masterdata/users");
                 }
                 else
                 {
@@ -127,6 +132,13 @@ $(function(){
             }
         });
     });
-    {/literal}
+
+});
+
+    
+{/literal}
+    
+
+    
 
 </script>

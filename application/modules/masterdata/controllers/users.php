@@ -15,17 +15,17 @@ class Users extends MY_Controller {
 	public function index()
 	{
 		$param = array('company_code' => $this->s_company_code);
-		$field_user = json_decode(($this->curl->simple_get($this->API.'Master_data/data_users', $param)), true);
-		$this->templates->assign( 'data_users', $field_user);
+		$data_user = json_decode(($this->curl->simple_get($this->API.'Master_data/data_users', $param)), true);
+		$this->templates->assign( 'data_users', $data_user);
     	$this->layout('users/lists', '');
 	}
 
 	public function add()
 	{
-		$param_fieldtype = array('code_category' => 'USR');
-		$field_role = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
+		$param_usertype = array('code_category' => 'USR');
+		$user_role = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
 
-		$this->templates->assign( 'role', $field_role);
+		$this->templates->assign( 'role', $user_role);
 		$this->layout('users/add', '');
 	}
 
@@ -35,10 +35,10 @@ class Users extends MY_Controller {
 									'id' => $this->input->get('user_id'));
 		$userdata = json_decode(($this->curl->simple_get($this->API.'Master_data/single_user', $param_user)), true);
 
-		$param_fieldtype = array('code_category' => 'USR');
-		$field_role = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
+		$param_usertype = array('code_category' => 'USR');
+		$user_role = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_usertype)), true);
 
-		$this->templates->assign( 'role', $field_role);
+		$this->templates->assign( 'role', $user_role);
 		$this->templates->assign( 'userdata', $userdata);
 		$this->layout('users/edit', '');
 	}

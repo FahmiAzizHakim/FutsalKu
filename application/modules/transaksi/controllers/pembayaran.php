@@ -29,7 +29,7 @@ class pembayaran extends MY_Controller {
 		$last_no = $get_last_no['data']+1;
 		$fin_no = 'PAYMENT'.'-'.$last_no;
 
-		/*$param_trx = array('trx_no' => $this->post("trx_no"));*/
+		// $param_trx = array('trx_no' => $this->post("trx_no"));
 		$param_trx = array('param_no' => $this->input->post("param_no"),'user_name' => $this->input->post("user_name"),'fin_no' => $fin_no);
 
 		

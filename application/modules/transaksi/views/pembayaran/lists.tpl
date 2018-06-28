@@ -53,7 +53,7 @@
                     user_name : $("#s_user_name").val() },
             success: function(data) {
                 $("#noty_topCenter_layout_container").remove();
-
+                alert(data.status);return false;
                 if(data.status == "success")
                 {
                     alert("Data Berhasil Diproses");

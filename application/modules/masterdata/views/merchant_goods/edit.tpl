@@ -5,38 +5,35 @@
             <form role="form">
                 <div class="form-group">
                     <label>Kode Barang</label>
-                    <input id="field_code" name="field_code" type="text" class="form-control"/>
-                    <input id="store_goods_id" type="hidden">
+                    <input id="goods_code" name="goods_code" type="text" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label>Nama Barang</label>
-                    <input id="field_name" name="field_name" type="text" class="form-control"/>
+                    <input id="goods_name" name="goods_name" type="text" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label>Jenis Barang</label>
-                    <select id="field_type" class="form-control select">
+                    <select id="goods_type" name="goods_type" class="form-control select">
                     <option></option>
-                    <option value="GDTFOD">Makanan</option>
-                    <option value="GDTDRK">Minuman</option>
-                    <option value="GDTDSCK">Snack/Jajanan</option>
-                    <option value="GDTEQP">Peralatan Futsal</option>
-                    <option value="GDTOTH">Lainnya</option>
+                    {foreach from=$goods_type item=row}
+                    <option value="{$row.code_code}">{$row.code_name}</option>
+                    {/foreach}
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Harga</label>
-                    <input id="field_price" type="number" class="form-control"/>
+                    <input id="goods_price" name="goods_price" type="number" class="form-control"/>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Aktif Status</label>
-                    <select id="activestatus" class="form-control select">
+                    <select id="activestatus" name="activestatus" class="form-control select">
                     <option value="ATSAC">Aktif</option>
                     <option value="ATSNA">Non Aktif</option>
                     </select>
                 </div>
                 <button id="BtnSubmit" type="button" class="btn btn-success active"><span class="fa fa-check"></span>Submit</button>
-                <button type="button" class="btn btn-danger active"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
+                <button id="BtnCancel" type="button" class="btn btn-danger active"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
             </form>
 
         </div>
@@ -44,43 +41,46 @@
 </div>
 
 <script type="text/javascript">
-var store_goods_id = "{$userdata.store_goods_id}";
-var field_code = "{$userdata.store_goods_code}";
-var field_name = "{$userdata.store_goods_name}";
-var field_type = "{$userdata.store_goods_type}";
-var field_price = "{$userdata.store_goods_price}";
-var activestatus = "{$userdata.activestatus}";
+var goods_id = "{$goodsdata.store_goods_id}";
+var goods_code = "{$goodsdata.store_goods_code}";
+var goods_name = "{$goodsdata.store_goods_name}";
+var goods_type = "{$goodsdata.store_goods_type}";
+var goods_price = "{$goodsdata.store_goods_price}";
+var activestatus = "{$goodsdata.activestatus}";
 var api_url = '{$api_url}';
+var base_url = '{$base_url}';
 {literal}
 $(function(){
-    $("#store_goods_id").val(store_goods_id);
-    $("#field_code").val(field_code);
-    $("#field_name").val(field_name);
-    $("#field_type").val(field_type);
-    $("#field_price").val(field_price);
+    $("#goods_code").val(goods_code);
+    $("#goods_name").val(goods_name);
+    $("#goods_type").val(goods_type);
+    $("#goods_price").val(goods_price);
     $("#activestatus").val(activestatus);
     $('.form-control').selectpicker('refresh');
-});
+
+    $("#BtnCancel").click(function(){
+        window.location.replace(base_url + "masterdata/merchant_goods");
+    });
 
     $("#BtnSubmit").click(function(){
-        if($("#field_code").val() == ""){
+        if($("#goods_code").val() == ""){
             alert("Kode Barang Harus Diisi");
-            $("#field_code").focus();
+            $("#goods_code").focus();
             return false;
         };
-        if($("#field_name").val() == ""){
+        if($("#goods_name").val() == ""){
             alert("Nama Barang Harus Diisi");
-            $("#field_name").focus();
+            $("#goods_name").focus();
             return false;
         };
-        if($("#field_type").val() == ""){
+        if($("#goods_type").val() == ""){
             alert("Tipe Barang Harus Diisi");
-            $("#field_type").focus();
+            $("#goods_type").focus();
             return false;
         };
-        if($("#field_price").val() == ""){
+        if($("#goods_price").val() == ""){
             alert("Harga Barang Harus Diisi");
-            $("#field_price").focus();
+            $("#goods_price").focus();
             return false;
         };
 
@@ -89,27 +89,27 @@ $(function(){
 
         $.ajax({
             type: "POST",
-            url: api_url + "Master_data/field_update_goods",
-            processData: false,
+            url: api_url + "Master_data/goods_update",
             dataType: "json",
-            data: { 
-                    field_code : $("#field_code").val(),
-                    field_name : $("#field_name").val(),
-                    field_type : $("#field_type").val(),
-                    field_price : $("#field_price").val(),
+            data: { goods_id : goods_id,
+                    goods_code : $("#goods_code").val(),
+                    goods_name : $("#goods_name").val(),
+                    goods_type : $("#goods_type").val(),
+                    goods_price : $("#goods_price").val(),
                     activestatus : $("#activestatus").val(),
                     lastupd_by : $("#s_user_code").val(),
-                    company_code : $("#s_company_code").val() },
+                    company_code : $("#s_company_code").val()
+                    },
             success: function(data) {
                 $("#BtnSubmit").removeAttr("disabled");
                 $("#noty_topCenter_layout_container").remove();
+                // alert(data.status);
 
                 if(data.status == "success")
                 {
                     alert("Data Berhasil Diproses");
-                    {/literal}
-                    window.location.replace("{$base_url}masterdata/merchant_goods");
-                    {literal}
+
+                    window.location.replace(base_url + "masterdata/merchant_goods");
                 }
                 else
                 {
@@ -119,6 +119,7 @@ $(function(){
             }
         });
     });
+});
     {/literal}
 
 </script>

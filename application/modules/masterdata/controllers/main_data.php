@@ -15,9 +15,13 @@ class Main_Data extends MY_Controller {
 	public function index()
 	{
 		$param = array('company_code' => $this->s_company_code);
-		
 		$data = json_decode(($this->curl->simple_get($this->API.'Global_Api/data_company', $param)), true);
+		
+		$param_district = array('company_districtcode' => $data['company_districtcode']);
+		$data_district = json_decode(($this->curl->simple_get($this->API.'Global_Api/data_district', $param_district)), true);
+		// print_r($param_district);die;
 
+		$this->templates->assign( 'data_district', $data_district);
 		$this->templates->assign( 'data_company', $data);
     	$this->layout('main_data/index', '');
 	}

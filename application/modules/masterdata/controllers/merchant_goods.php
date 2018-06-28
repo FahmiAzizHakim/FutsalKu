@@ -24,26 +24,24 @@ class Merchant_Goods extends MY_Controller {
 
 	public function add()
 	{
-		$param_fieldtype = array('code_category' => 'GDT');
-		$field_type = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
+		$param_goodstype = array('code_category' => 'GDT');
+		$goods_type = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_goodstype)), true);
 
-		$this->templates->assign( 'field_type', $field_type);
+		$this->templates->assign( 'goods_type', $goods_type);
 		$this->layout('merchant_goods/add', '');
 	}
 
 
 	public function edit()
 	{
-		$param_user = array('company_code' => $this->s_company_code,
+		$param = array('company_code' => $this->s_company_code,
 									'id' => $this->input->get('store_goods_id'));
-		$userdata = json_decode(($this->curl->simple_get($this->API.'Master_data/single_goods', $param_user)), true);
-		// print_r($userdata);die();
+		$goodsdata = json_decode(($this->curl->simple_get($this->API.'Master_data/single_goods', $param)), true);
+		$param_goodstype = array('code_category' => 'GDT');
 
-		$param_fieldtype = array('code_category' => 'USR');
-		$field_role = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_fieldtype)), true);
-
-		$this->templates->assign( 'role', $field_role);
-		$this->templates->assign( 'userdata', $userdata);
+		$goods_type = json_decode(($this->curl->simple_get($this->API.'Master_data/code_bycategory', $param_goodstype)), true);
+		$this->templates->assign( 'goods_type', $goods_type);
+		$this->templates->assign( 'goodsdata', $goodsdata);
 		$this->layout('merchant_goods/edit', '');
 	}
 }

@@ -82,7 +82,7 @@
                             </div> -->
                             <div class="profile-data">
                                 <div class="profile-data-name">{$s_user_name}</div>
-                                <div class="profile-data-title">Palad Futsal</div>
+                                <div class="profile-data-title">Tifosi Sport Center</div>
                                 <input type="hidden" name="s_user_name" id="s_user_name" value="{$s_user_name}">
                                 <input type="hidden" name="s_user_id" id="s_user_id" value="{$s_user_id}">
                                 <input type="hidden" name="s_user_code" id="s_user_code" value="{$s_user_code}">
